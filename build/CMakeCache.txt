@@ -102,6 +102,11 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during RELWITHDEBINFO builds.
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
+//Enable output of a compile_commands.json file listing the exact
+// compiler invocation for each translation unit. Implemented by
+// the Makefile and Ninja generators; ignored elsewhere.
+CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
+
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/home/green/openGL/proj/build/CMakeFiles/pkgRedirects
 
@@ -156,7 +161,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=sww
+CMAKE_PROJECT_NAME:STATIC=opengl
 
 //Value Computed by CMake
 CMAKE_PROJECT_SPDX_LICENSE:STATIC=
@@ -257,6 +262,15 @@ OPENGL_SANDBOX_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 OPENGL_SANDBOX_SOURCE_DIR:STATIC=/home/green/openGL/proj
+
+//Value Computed by CMake
+opengl_BINARY_DIR:STATIC=/home/green/openGL/proj/build
+
+//Value Computed by CMake
+opengl_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+opengl_SOURCE_DIR:STATIC=/home/green/openGL/proj
 
 //Value Computed by CMake
 sww_BINARY_DIR:STATIC=/home/green/openGL/proj/build

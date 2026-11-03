@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/helloworld.dir/src/glad.c.obj"
   "CMakeFiles/helloworld.dir/src/glad.c.obj.d"
-  "CMakeFiles/helloworld.dir/src/hello_windows.cpp.obj"
-  "CMakeFiles/helloworld.dir/src/hello_windows.cpp.obj.d"
+  "CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj"
+  "CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj.d"
   "helloworld.exe"
   "helloworld.pdb"
   "libhelloworld.dll.a"

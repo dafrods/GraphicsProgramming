@@ -9,9 +9,8 @@ if(WIN32)
 endif()
 
 add_executable(helloworld WIN32
-    src/hello_windows.cpp
+    src/hellowindows.cpp
     src/glad.c
-    # src/main.cpp
 )
 
 target_include_directories(helloworld

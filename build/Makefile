@@ -164,29 +164,29 @@ src/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/glad.c.s
 .PHONY : src/glad.c.s
 
-src/hello_windows.obj: src/hello_windows.cpp.obj
-.PHONY : src/hello_windows.obj
+src/hellowindows.obj: src/hellowindows.cpp.obj
+.PHONY : src/hellowindows.obj
 
 # target to build an object file
-src/hello_windows.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/hello_windows.cpp.obj
-.PHONY : src/hello_windows.cpp.obj
+src/hellowindows.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj
+.PHONY : src/hellowindows.cpp.obj
 
-src/hello_windows.i: src/hello_windows.cpp.i
-.PHONY : src/hello_windows.i
+src/hellowindows.i: src/hellowindows.cpp.i
+.PHONY : src/hellowindows.i
 
 # target to preprocess a source file
-src/hello_windows.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/hello_windows.cpp.i
-.PHONY : src/hello_windows.cpp.i
+src/hellowindows.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/hellowindows.cpp.i
+.PHONY : src/hellowindows.cpp.i
 
-src/hello_windows.s: src/hello_windows.cpp.s
-.PHONY : src/hello_windows.s
+src/hellowindows.s: src/hellowindows.cpp.s
+.PHONY : src/hellowindows.s
 
 # target to generate assembly for a file
-src/hello_windows.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/hello_windows.cpp.s
-.PHONY : src/hello_windows.cpp.s
+src/hellowindows.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/hellowindows.cpp.s
+.PHONY : src/hellowindows.cpp.s
 
 # Help Target
 help:
@@ -200,9 +200,9 @@ help:
 	@echo "... src/glad.obj"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
-	@echo "... src/hello_windows.obj"
-	@echo "... src/hello_windows.i"
-	@echo "... src/hello_windows.s"
+	@echo "... src/hellowindows.obj"
+	@echo "... src/hellowindows.i"
+	@echo "... src/hellowindows.s"
 .PHONY : help
 
 

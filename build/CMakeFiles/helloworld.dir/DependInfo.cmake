@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/green/openGL/proj/src/glad.c" "CMakeFiles/helloworld.dir/src/glad.c.obj" "gcc" "CMakeFiles/helloworld.dir/src/glad.c.obj.d"
-  "/home/green/openGL/proj/src/hello_windows.cpp" "CMakeFiles/helloworld.dir/src/hello_windows.cpp.obj" "gcc" "CMakeFiles/helloworld.dir/src/hello_windows.cpp.obj.d"
+  "/home/green/openGL/proj/src/hellowindows.cpp" "CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj" "gcc" "CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -1,9 +1,9 @@
 [
 {
   "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/helloworld.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles/helloworld.dir/src/hello_windows.cpp.obj -c /home/green/openGL/proj/src/hello_windows.cpp",
-  "file": "/home/green/openGL/proj/src/hello_windows.cpp",
-  "output": "CMakeFiles/helloworld.dir/src/hello_windows.cpp.obj"
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/helloworld.dir/includes_CXX.rsp -std=gnu++20 -o CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj -c /home/green/openGL/proj/src/hellowindows.cpp",
+  "file": "/home/green/openGL/proj/src/hellowindows.cpp",
+  "output": "CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj"
 },
 {
   "directory": "/home/green/openGL/proj/build",
