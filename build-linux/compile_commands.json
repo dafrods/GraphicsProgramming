@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/green/openGL/proj/build-linux",
+  "command": "/usr/bin/c++   -std=gnu++20 -o CMakeFiles/helloworld.dir/src/main.cpp.o -c /home/green/openGL/proj/src/main.cpp",
+  "file": "/home/green/openGL/proj/src/main.cpp",
+  "output": "CMakeFiles/helloworld.dir/src/main.cpp.o"
+}
+]

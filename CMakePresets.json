@@ -1,0 +1,24 @@
+{
+  "version": 4,
+  "configurePresets": [
+    {
+      "name": "default-w64",
+      "displayName": "Default Build",
+      "description": "Default Build Preset",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+            "CMAKE_CXX_STANDARD":"20",
+            "CMAKE_TOOLCHAIN_FILE":"/home/green/toolchains/mingw-w64.cmake"
+      }
+    },
+        {
+      "name": "default-linux",
+      "displayName": "Default Build",
+      "description": "Default Build Preset",
+      "binaryDir": "${sourceDir}/build-linux",
+      "cacheVariables": {
+            "CMAKE_CXX_STANDARD":"20"
+      }
+    }
+  ]
+}
