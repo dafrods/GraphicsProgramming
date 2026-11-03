@@ -8,7 +8,8 @@
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
             "CMAKE_CXX_STANDARD":"20",
-            "CMAKE_TOOLCHAIN_FILE":"/home/green/toolchains/mingw-w64.cmake"
+            "CMAKE_TOOLCHAIN_FILE":"/home/green/toolchains/mingw-w64.cmake",
+            "CMAKE_BUILD_TYPE": "Debug"
       }
     },
         {
@@ -17,7 +18,8 @@
       "description": "Default Build Preset",
       "binaryDir": "${sourceDir}/build-linux",
       "cacheVariables": {
-            "CMAKE_CXX_STANDARD":"20"
+            "CMAKE_CXX_STANDARD":"20",
+            "CMAKE_BUILD_TYPE": "Debug"
       }
     }
   ]
