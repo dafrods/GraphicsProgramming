@@ -75,20 +75,20 @@ include CMakeFiles/helloworld.dir/flags.make
 CMakeFiles/helloworld.dir/codegen:
 .PHONY : CMakeFiles/helloworld.dir/codegen
 
-CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj: CMakeFiles/helloworld.dir/flags.make
-CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj: CMakeFiles/helloworld.dir/includes_CXX.rsp
-CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj: /home/green/openGL/proj/src/hellowindows.cpp
-CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj: CMakeFiles/helloworld.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/green/openGL/proj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj"
-	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj -MF CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj.d -o CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj -c /home/green/openGL/proj/src/hellowindows.cpp
+CMakeFiles/helloworld.dir/src/triangle.cpp.obj: CMakeFiles/helloworld.dir/flags.make
+CMakeFiles/helloworld.dir/src/triangle.cpp.obj: CMakeFiles/helloworld.dir/includes_CXX.rsp
+CMakeFiles/helloworld.dir/src/triangle.cpp.obj: /home/green/openGL/proj/src/triangle.cpp
+CMakeFiles/helloworld.dir/src/triangle.cpp.obj: CMakeFiles/helloworld.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/green/openGL/proj/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/helloworld.dir/src/triangle.cpp.obj"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/helloworld.dir/src/triangle.cpp.obj -MF CMakeFiles/helloworld.dir/src/triangle.cpp.obj.d -o CMakeFiles/helloworld.dir/src/triangle.cpp.obj -c /home/green/openGL/proj/src/triangle.cpp
 
-CMakeFiles/helloworld.dir/src/hellowindows.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/helloworld.dir/src/hellowindows.cpp.i"
-	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/green/openGL/proj/src/hellowindows.cpp > CMakeFiles/helloworld.dir/src/hellowindows.cpp.i
+CMakeFiles/helloworld.dir/src/triangle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/helloworld.dir/src/triangle.cpp.i"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/green/openGL/proj/src/triangle.cpp > CMakeFiles/helloworld.dir/src/triangle.cpp.i
 
-CMakeFiles/helloworld.dir/src/hellowindows.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/helloworld.dir/src/hellowindows.cpp.s"
-	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/green/openGL/proj/src/hellowindows.cpp -o CMakeFiles/helloworld.dir/src/hellowindows.cpp.s
+CMakeFiles/helloworld.dir/src/triangle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/helloworld.dir/src/triangle.cpp.s"
+	/usr/bin/x86_64-w64-mingw32-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/green/openGL/proj/src/triangle.cpp -o CMakeFiles/helloworld.dir/src/triangle.cpp.s
 
 CMakeFiles/helloworld.dir/src/glad.c.obj: CMakeFiles/helloworld.dir/flags.make
 CMakeFiles/helloworld.dir/src/glad.c.obj: CMakeFiles/helloworld.dir/includes_C.rsp
@@ -107,13 +107,13 @@ CMakeFiles/helloworld.dir/src/glad.c.s: cmake_force
 
 # Object files for target helloworld
 helloworld_OBJECTS = \
-"CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj" \
+"CMakeFiles/helloworld.dir/src/triangle.cpp.obj" \
 "CMakeFiles/helloworld.dir/src/glad.c.obj"
 
 # External object files for target helloworld
 helloworld_EXTERNAL_OBJECTS =
 
-helloworld.exe: CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj
+helloworld.exe: CMakeFiles/helloworld.dir/src/triangle.cpp.obj
 helloworld.exe: CMakeFiles/helloworld.dir/src/glad.c.obj
 helloworld.exe: CMakeFiles/helloworld.dir/build.make
 helloworld.exe: /home/green/openGL/GLFW/build-w64/src/libglfw3.a

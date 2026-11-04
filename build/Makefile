@@ -164,29 +164,29 @@ src/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/glad.c.s
 .PHONY : src/glad.c.s
 
-src/hellowindows.obj: src/hellowindows.cpp.obj
-.PHONY : src/hellowindows.obj
+src/triangle.obj: src/triangle.cpp.obj
+.PHONY : src/triangle.obj
 
 # target to build an object file
-src/hellowindows.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/hellowindows.cpp.obj
-.PHONY : src/hellowindows.cpp.obj
+src/triangle.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/triangle.cpp.obj
+.PHONY : src/triangle.cpp.obj
 
-src/hellowindows.i: src/hellowindows.cpp.i
-.PHONY : src/hellowindows.i
+src/triangle.i: src/triangle.cpp.i
+.PHONY : src/triangle.i
 
 # target to preprocess a source file
-src/hellowindows.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/hellowindows.cpp.i
-.PHONY : src/hellowindows.cpp.i
+src/triangle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/triangle.cpp.i
+.PHONY : src/triangle.cpp.i
 
-src/hellowindows.s: src/hellowindows.cpp.s
-.PHONY : src/hellowindows.s
+src/triangle.s: src/triangle.cpp.s
+.PHONY : src/triangle.s
 
 # target to generate assembly for a file
-src/hellowindows.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/hellowindows.cpp.s
-.PHONY : src/hellowindows.cpp.s
+src/triangle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/triangle.cpp.s
+.PHONY : src/triangle.cpp.s
 
 # Help Target
 help:
@@ -200,9 +200,9 @@ help:
 	@echo "... src/glad.obj"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
-	@echo "... src/hellowindows.obj"
-	@echo "... src/hellowindows.i"
-	@echo "... src/hellowindows.s"
+	@echo "... src/triangle.obj"
+	@echo "... src/triangle.i"
+	@echo "... src/triangle.s"
 .PHONY : help
 
 

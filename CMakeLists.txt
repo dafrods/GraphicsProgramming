@@ -9,19 +9,19 @@ if(WIN32)
 endif()
 
 add_executable(helloworld WIN32
-    src/hellowindows.cpp
+    src/triangle.cpp
     src/glad.c
 )
 
 target_include_directories(helloworld
     PRIVATE
         include
-        $ENV{HOME}/openGL/GLFW/include
+        $ENV{HOME}/openGL/GLFW/include # glfw headers
         opengl32
 )
 
 target_link_libraries(helloworld PRIVATE
-    $ENV{HOME}/openGL/GLFW/build-w64/src/libglfw3.a
+    $ENV{HOME}/openGL/GLFW/build-w64/src/libglfw3.a # self compiled glfw lib
     opengl32
     gdi32
     user32
