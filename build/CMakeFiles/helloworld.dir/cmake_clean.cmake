@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/helloworld.dir/src/ex.cpp.obj"
-  "CMakeFiles/helloworld.dir/src/ex.cpp.obj.d"
+  "CMakeFiles/helloworld.dir/src/ex3alt.cpp.obj"
+  "CMakeFiles/helloworld.dir/src/ex3alt.cpp.obj.d"
   "CMakeFiles/helloworld.dir/src/glad.c.obj"
   "CMakeFiles/helloworld.dir/src/glad.c.obj.d"
   "helloworld.exe"

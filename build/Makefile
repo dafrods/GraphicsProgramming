@@ -140,29 +140,29 @@ test_prep/all: cmake_check_build_system
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_prep/all
 .PHONY : test_prep/all
 
-src/ex.obj: src/ex.cpp.obj
-.PHONY : src/ex.obj
+src/ex3alt.obj: src/ex3alt.cpp.obj
+.PHONY : src/ex3alt.obj
 
 # target to build an object file
-src/ex.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/ex.cpp.obj
-.PHONY : src/ex.cpp.obj
+src/ex3alt.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/ex3alt.cpp.obj
+.PHONY : src/ex3alt.cpp.obj
 
-src/ex.i: src/ex.cpp.i
-.PHONY : src/ex.i
+src/ex3alt.i: src/ex3alt.cpp.i
+.PHONY : src/ex3alt.i
 
 # target to preprocess a source file
-src/ex.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/ex.cpp.i
-.PHONY : src/ex.cpp.i
+src/ex3alt.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/ex3alt.cpp.i
+.PHONY : src/ex3alt.cpp.i
 
-src/ex.s: src/ex.cpp.s
-.PHONY : src/ex.s
+src/ex3alt.s: src/ex3alt.cpp.s
+.PHONY : src/ex3alt.s
 
 # target to generate assembly for a file
-src/ex.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/ex.cpp.s
-.PHONY : src/ex.cpp.s
+src/ex3alt.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/ex3alt.cpp.s
+.PHONY : src/ex3alt.cpp.s
 
 src/glad.obj: src/glad.c.obj
 .PHONY : src/glad.obj
@@ -197,9 +197,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... helloworld"
-	@echo "... src/ex.obj"
-	@echo "... src/ex.i"
-	@echo "... src/ex.s"
+	@echo "... src/ex3alt.obj"
+	@echo "... src/ex3alt.i"
+	@echo "... src/ex3alt.s"
 	@echo "... src/glad.obj"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"

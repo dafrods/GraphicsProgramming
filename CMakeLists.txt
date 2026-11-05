@@ -8,10 +8,16 @@ if(WIN32)
     set(CMAKE_EXE_LINKER_FLAGS "-static")
 endif()
 
+# add_executable(helloworld WIN32
+#     src/ex.cpp
+#     src/glad.c
+# )
+
 add_executable(helloworld WIN32
-    src/ex.cpp
+    src/ex3alt.cpp
     src/glad.c
 )
+
 
 target_include_directories(helloworld
     PRIVATE
