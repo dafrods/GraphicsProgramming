@@ -140,6 +140,30 @@ test_prep/all: cmake_check_build_system
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_prep/all
 .PHONY : test_prep/all
 
+src/ex.obj: src/ex.cpp.obj
+.PHONY : src/ex.obj
+
+# target to build an object file
+src/ex.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/ex.cpp.obj
+.PHONY : src/ex.cpp.obj
+
+src/ex.i: src/ex.cpp.i
+.PHONY : src/ex.i
+
+# target to preprocess a source file
+src/ex.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/ex.cpp.i
+.PHONY : src/ex.cpp.i
+
+src/ex.s: src/ex.cpp.s
+.PHONY : src/ex.s
+
+# target to generate assembly for a file
+src/ex.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/ex.cpp.s
+.PHONY : src/ex.cpp.s
+
 src/glad.obj: src/glad.c.obj
 .PHONY : src/glad.obj
 
@@ -164,30 +188,6 @@ src/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/glad.c.s
 .PHONY : src/glad.c.s
 
-src/triangle.obj: src/triangle.cpp.obj
-.PHONY : src/triangle.obj
-
-# target to build an object file
-src/triangle.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/triangle.cpp.obj
-.PHONY : src/triangle.cpp.obj
-
-src/triangle.i: src/triangle.cpp.i
-.PHONY : src/triangle.i
-
-# target to preprocess a source file
-src/triangle.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/triangle.cpp.i
-.PHONY : src/triangle.cpp.i
-
-src/triangle.s: src/triangle.cpp.s
-.PHONY : src/triangle.s
-
-# target to generate assembly for a file
-src/triangle.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/triangle.cpp.s
-.PHONY : src/triangle.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -197,12 +197,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... helloworld"
+	@echo "... src/ex.obj"
+	@echo "... src/ex.i"
+	@echo "... src/ex.s"
 	@echo "... src/glad.obj"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
-	@echo "... src/triangle.obj"
-	@echo "... src/triangle.i"
-	@echo "... src/triangle.s"
 .PHONY : help
 
 

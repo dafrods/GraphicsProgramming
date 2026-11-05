@@ -1,9 +1,9 @@
 [
 {
   "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/helloworld.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/helloworld.dir/src/triangle.cpp.obj -c /home/green/openGL/proj/src/triangle.cpp",
-  "file": "/home/green/openGL/proj/src/triangle.cpp",
-  "output": "CMakeFiles/helloworld.dir/src/triangle.cpp.obj"
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/helloworld.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/helloworld.dir/src/ex.cpp.obj -c /home/green/openGL/proj/src/ex.cpp",
+  "file": "/home/green/openGL/proj/src/ex.cpp",
+  "output": "CMakeFiles/helloworld.dir/src/ex.cpp.obj"
 },
 {
   "directory": "/home/green/openGL/proj/build",

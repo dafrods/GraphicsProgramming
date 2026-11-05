@@ -9,7 +9,7 @@ if(WIN32)
 endif()
 
 add_executable(helloworld WIN32
-    src/triangle.cpp
+    src/ex.cpp
     src/glad.c
 )
 
