@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/shader.dir/link.d CMakeFiles/shader.dir/src/shader.cpp.o CMakeFiles/shader.dir/src/glad.c.o CMakeFiles/shader.dir/src/opengl_util.cpp.o CMakeFiles/shader.dir/src/logger.cpp.o -o shader  /home/green/openGL/GLFW/build-linux/src/libglfw3.a /home/green/openGL/proj/third-party/spdlog/build/libspdlog.a -lGL

@@ -1,14 +1,26 @@
 [
 {
   "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/helloworld.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/helloworld.dir/src/ex3alt.cpp.obj -c /home/green/openGL/proj/src/ex3alt.cpp",
-  "file": "/home/green/openGL/proj/src/ex3alt.cpp",
-  "output": "CMakeFiles/helloworld.dir/src/ex3alt.cpp.obj"
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/shader.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/shader.dir/src/shader.cpp.obj -c /home/green/openGL/proj/src/shader.cpp",
+  "file": "/home/green/openGL/proj/src/shader.cpp",
+  "output": "CMakeFiles/shader.dir/src/shader.cpp.obj"
 },
 {
   "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-gcc  @CMakeFiles/helloworld.dir/includes_C.rsp -g -o CMakeFiles/helloworld.dir/src/glad.c.obj -c /home/green/openGL/proj/src/glad.c",
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/shader.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/shader.dir/src/opengl_util.cpp.obj -c /home/green/openGL/proj/src/opengl_util.cpp",
+  "file": "/home/green/openGL/proj/src/opengl_util.cpp",
+  "output": "CMakeFiles/shader.dir/src/opengl_util.cpp.obj"
+},
+{
+  "directory": "/home/green/openGL/proj/build",
+  "command": "/usr/bin/x86_64-w64-mingw32-gcc  @CMakeFiles/shader.dir/includes_C.rsp -g -o CMakeFiles/shader.dir/src/glad.c.obj -c /home/green/openGL/proj/src/glad.c",
   "file": "/home/green/openGL/proj/src/glad.c",
-  "output": "CMakeFiles/helloworld.dir/src/glad.c.obj"
+  "output": "CMakeFiles/shader.dir/src/glad.c.obj"
+},
+{
+  "directory": "/home/green/openGL/proj/build",
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/shader.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/shader.dir/src/logger.cpp.obj -c /home/green/openGL/proj/src/logger.cpp",
+  "file": "/home/green/openGL/proj/src/logger.cpp",
+  "output": "CMakeFiles/shader.dir/src/logger.cpp.obj"
 }
 ]

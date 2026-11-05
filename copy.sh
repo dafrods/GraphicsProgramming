@@ -1,6 +1,6 @@
-DEST="$PROJECTS/openGL/dump/helloworld.exe"
+DEST="$PROJECTS/openGL/dump/"
 
-cp $HOME/openGL/proj/build/helloworld.exe $DEST
+cp $HOME/openGL/proj/build/*.exe $DEST
 
 if [ -e $DEST ]; then
     echo "COPY OK"

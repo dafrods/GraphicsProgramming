@@ -120,17 +120,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named helloworld
+# Target rules for targets named shader
 
 # Build rule for target.
-helloworld: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 helloworld
-.PHONY : helloworld
+shader: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shader
+.PHONY : shader
 
 # fast build rule for target.
-helloworld/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/build
-.PHONY : helloworld/fast
+shader/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/build
+.PHONY : shader/fast
 
 #=============================================================================
 # Convenience rules to build test dependencies.
@@ -140,36 +140,12 @@ test_prep/all: cmake_check_build_system
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_prep/all
 .PHONY : test_prep/all
 
-src/ex3alt.obj: src/ex3alt.cpp.obj
-.PHONY : src/ex3alt.obj
-
-# target to build an object file
-src/ex3alt.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/ex3alt.cpp.obj
-.PHONY : src/ex3alt.cpp.obj
-
-src/ex3alt.i: src/ex3alt.cpp.i
-.PHONY : src/ex3alt.i
-
-# target to preprocess a source file
-src/ex3alt.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/ex3alt.cpp.i
-.PHONY : src/ex3alt.cpp.i
-
-src/ex3alt.s: src/ex3alt.cpp.s
-.PHONY : src/ex3alt.s
-
-# target to generate assembly for a file
-src/ex3alt.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/ex3alt.cpp.s
-.PHONY : src/ex3alt.cpp.s
-
 src/glad.obj: src/glad.c.obj
 .PHONY : src/glad.obj
 
 # target to build an object file
 src/glad.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/glad.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/glad.c.obj
 .PHONY : src/glad.c.obj
 
 src/glad.i: src/glad.c.i
@@ -177,7 +153,7 @@ src/glad.i: src/glad.c.i
 
 # target to preprocess a source file
 src/glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/glad.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/glad.c.i
 .PHONY : src/glad.c.i
 
 src/glad.s: src/glad.c.s
@@ -185,8 +161,80 @@ src/glad.s: src/glad.c.s
 
 # target to generate assembly for a file
 src/glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/glad.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/glad.c.s
 .PHONY : src/glad.c.s
+
+src/logger.obj: src/logger.cpp.obj
+.PHONY : src/logger.obj
+
+# target to build an object file
+src/logger.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/logger.cpp.obj
+.PHONY : src/logger.cpp.obj
+
+src/logger.i: src/logger.cpp.i
+.PHONY : src/logger.i
+
+# target to preprocess a source file
+src/logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/logger.cpp.i
+.PHONY : src/logger.cpp.i
+
+src/logger.s: src/logger.cpp.s
+.PHONY : src/logger.s
+
+# target to generate assembly for a file
+src/logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/logger.cpp.s
+.PHONY : src/logger.cpp.s
+
+src/opengl_util.obj: src/opengl_util.cpp.obj
+.PHONY : src/opengl_util.obj
+
+# target to build an object file
+src/opengl_util.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/opengl_util.cpp.obj
+.PHONY : src/opengl_util.cpp.obj
+
+src/opengl_util.i: src/opengl_util.cpp.i
+.PHONY : src/opengl_util.i
+
+# target to preprocess a source file
+src/opengl_util.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/opengl_util.cpp.i
+.PHONY : src/opengl_util.cpp.i
+
+src/opengl_util.s: src/opengl_util.cpp.s
+.PHONY : src/opengl_util.s
+
+# target to generate assembly for a file
+src/opengl_util.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/opengl_util.cpp.s
+.PHONY : src/opengl_util.cpp.s
+
+src/shader.obj: src/shader.cpp.obj
+.PHONY : src/shader.obj
+
+# target to build an object file
+src/shader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/shader.cpp.obj
+.PHONY : src/shader.cpp.obj
+
+src/shader.i: src/shader.cpp.i
+.PHONY : src/shader.i
+
+# target to preprocess a source file
+src/shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/shader.cpp.i
+.PHONY : src/shader.cpp.i
+
+src/shader.s: src/shader.cpp.s
+.PHONY : src/shader.s
+
+# target to generate assembly for a file
+src/shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/shader.cpp.s
+.PHONY : src/shader.cpp.s
 
 # Help Target
 help:
@@ -196,13 +244,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... helloworld"
-	@echo "... src/ex3alt.obj"
-	@echo "... src/ex3alt.i"
-	@echo "... src/ex3alt.s"
+	@echo "... shader"
 	@echo "... src/glad.obj"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
+	@echo "... src/logger.obj"
+	@echo "... src/logger.i"
+	@echo "... src/logger.s"
+	@echo "... src/opengl_util.obj"
+	@echo "... src/opengl_util.i"
+	@echo "... src/opengl_util.s"
+	@echo "... src/shader.obj"
+	@echo "... src/shader.i"
+	@echo "... src/shader.s"
 .PHONY : help
 
 

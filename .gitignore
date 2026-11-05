@@ -1,4 +1,5 @@
 build-w64
 build
+third-party
 .cache
 .vscode

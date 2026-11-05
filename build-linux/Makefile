@@ -120,17 +120,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named helloworld
+# Target rules for targets named shader
 
 # Build rule for target.
-helloworld: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 helloworld
-.PHONY : helloworld
+shader: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shader
+.PHONY : shader
 
 # fast build rule for target.
-helloworld/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/build
-.PHONY : helloworld/fast
+shader/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/build
+.PHONY : shader/fast
 
 #=============================================================================
 # Convenience rules to build test dependencies.
@@ -140,29 +140,101 @@ test_prep/all: cmake_check_build_system
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_prep/all
 .PHONY : test_prep/all
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+src/glad.o: src/glad.c.o
+.PHONY : src/glad.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/glad.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/glad.c.o
+.PHONY : src/glad.c.o
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+src/glad.i: src/glad.c.i
+.PHONY : src/glad.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/glad.c.i
+.PHONY : src/glad.c.i
 
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+src/glad.s: src/glad.c.s
+.PHONY : src/glad.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/helloworld.dir/build.make CMakeFiles/helloworld.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/glad.c.s
+.PHONY : src/glad.c.s
+
+src/logger.o: src/logger.cpp.o
+.PHONY : src/logger.o
+
+# target to build an object file
+src/logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/logger.cpp.o
+.PHONY : src/logger.cpp.o
+
+src/logger.i: src/logger.cpp.i
+.PHONY : src/logger.i
+
+# target to preprocess a source file
+src/logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/logger.cpp.i
+.PHONY : src/logger.cpp.i
+
+src/logger.s: src/logger.cpp.s
+.PHONY : src/logger.s
+
+# target to generate assembly for a file
+src/logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/logger.cpp.s
+.PHONY : src/logger.cpp.s
+
+src/opengl_util.o: src/opengl_util.cpp.o
+.PHONY : src/opengl_util.o
+
+# target to build an object file
+src/opengl_util.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/opengl_util.cpp.o
+.PHONY : src/opengl_util.cpp.o
+
+src/opengl_util.i: src/opengl_util.cpp.i
+.PHONY : src/opengl_util.i
+
+# target to preprocess a source file
+src/opengl_util.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/opengl_util.cpp.i
+.PHONY : src/opengl_util.cpp.i
+
+src/opengl_util.s: src/opengl_util.cpp.s
+.PHONY : src/opengl_util.s
+
+# target to generate assembly for a file
+src/opengl_util.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/opengl_util.cpp.s
+.PHONY : src/opengl_util.cpp.s
+
+src/shader.o: src/shader.cpp.o
+.PHONY : src/shader.o
+
+# target to build an object file
+src/shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/shader.cpp.o
+.PHONY : src/shader.cpp.o
+
+src/shader.i: src/shader.cpp.i
+.PHONY : src/shader.i
+
+# target to preprocess a source file
+src/shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/shader.cpp.i
+.PHONY : src/shader.cpp.i
+
+src/shader.s: src/shader.cpp.s
+.PHONY : src/shader.s
+
+# target to generate assembly for a file
+src/shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/shader.cpp.s
+.PHONY : src/shader.cpp.s
 
 # Help Target
 help:
@@ -172,10 +244,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... helloworld"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... shader"
+	@echo "... src/glad.o"
+	@echo "... src/glad.i"
+	@echo "... src/glad.s"
+	@echo "... src/logger.o"
+	@echo "... src/logger.i"
+	@echo "... src/logger.s"
+	@echo "... src/opengl_util.o"
+	@echo "... src/opengl_util.i"
+	@echo "... src/opengl_util.s"
+	@echo "... src/shader.o"
+	@echo "... src/shader.i"
+	@echo "... src/shader.s"
 .PHONY : help
 
 
