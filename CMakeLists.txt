@@ -4,6 +4,13 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 project(opengl LANGUAGES C CXX)
 
+# ADD DEPENDENCY REQUIREMENTS LATER
+# Need atleast a graphics driver eg Mesa
+# OpenGL 3.3 or higher
+
+
+
+# Removes mingw-w64 dll dependency for windows builds
 if(WIN32)
     set(CMAKE_EXE_LINKER_FLAGS "-static")
 endif()
@@ -17,7 +24,7 @@ function(add_gl_program TARGET SOURCE)
         src/glad.c
         src/logger.cpp
     )
-    else()
+    elseif(LINUX)
         add_executable(${TARGET}
         ${SOURCE}
         src/glad.c
@@ -34,7 +41,7 @@ function(add_gl_program TARGET SOURCE)
     if(WIN32)
     target_link_libraries(${TARGET} PRIVATE
         $ENV{HOME}/openGL/GLFW/build-w64/src/libglfw3.a
-        $ENV{HOME}/openGL/proj/third-party/spdlog/build-w64/libspdlog.a
+        $ENV{HOME}/openGL/proj/third-party/spdlog/build-w64/libspdlog.a 
         opengl32
         gdi32
         user32
@@ -43,7 +50,7 @@ function(add_gl_program TARGET SOURCE)
     elseif(LINUX)
     target_link_libraries(${TARGET} PRIVATE
         $ENV{HOME}/openGL/GLFW/build-linux/src/libglfw3.a
-        $ENV{HOME}/openGL/proj/third-party/spdlog/build/libspdlog.a
+        $ENV{HOME}/openGL/proj/third-party/spdlog/build/libspdlog.a 
         GL
     )
     endif()
