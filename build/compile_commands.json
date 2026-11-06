@@ -1,74 +1,38 @@
 [
 {
   "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/shader.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/shader.dir/src/shader.cpp.obj -c /home/green/openGL/proj/src/shader.cpp",
+  "command": "/usr/bin/x86_64-w64-mingw32-gcc  @CMakeFiles/opengl_common.dir/includes_C.rsp -g -o CMakeFiles/opengl_common.dir/src/glad.c.obj -c /home/green/openGL/proj/src/glad.c",
+  "file": "/home/green/openGL/proj/src/glad.c",
+  "output": "CMakeFiles/opengl_common.dir/src/glad.c.obj"
+},
+{
+  "directory": "/home/green/openGL/proj/build",
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/opengl_common.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/opengl_common.dir/src/opengl_util.cpp.obj -c /home/green/openGL/proj/src/opengl_util.cpp",
+  "file": "/home/green/openGL/proj/src/opengl_util.cpp",
+  "output": "CMakeFiles/opengl_common.dir/src/opengl_util.cpp.obj"
+},
+{
+  "directory": "/home/green/openGL/proj/build",
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/opengl_common.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/opengl_common.dir/src/logger.cpp.obj -c /home/green/openGL/proj/src/logger.cpp",
+  "file": "/home/green/openGL/proj/src/logger.cpp",
+  "output": "CMakeFiles/opengl_common.dir/src/logger.cpp.obj"
+},
+{
+  "directory": "/home/green/openGL/proj/build",
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/opengl_common.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/opengl_common.dir/src/shader.cpp.obj -c /home/green/openGL/proj/src/shader.cpp",
   "file": "/home/green/openGL/proj/src/shader.cpp",
-  "output": "CMakeFiles/shader.dir/src/shader.cpp.obj"
+  "output": "CMakeFiles/opengl_common.dir/src/shader.cpp.obj"
 },
 {
   "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/shader.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/shader.dir/src/opengl_util.cpp.obj -c /home/green/openGL/proj/src/opengl_util.cpp",
-  "file": "/home/green/openGL/proj/src/opengl_util.cpp",
-  "output": "CMakeFiles/shader.dir/src/opengl_util.cpp.obj"
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/shader_template.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/shader_template.dir/src/shader_ex1.cpp.obj -c /home/green/openGL/proj/src/shader_ex1.cpp",
+  "file": "/home/green/openGL/proj/src/shader_ex1.cpp",
+  "output": "CMakeFiles/shader_template.dir/src/shader_ex1.cpp.obj"
 },
 {
   "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-gcc  @CMakeFiles/shader.dir/includes_C.rsp -g -o CMakeFiles/shader.dir/src/glad.c.obj -c /home/green/openGL/proj/src/glad.c",
-  "file": "/home/green/openGL/proj/src/glad.c",
-  "output": "CMakeFiles/shader.dir/src/glad.c.obj"
-},
-{
-  "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/shader.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/shader.dir/src/logger.cpp.obj -c /home/green/openGL/proj/src/logger.cpp",
-  "file": "/home/green/openGL/proj/src/logger.cpp",
-  "output": "CMakeFiles/shader.dir/src/logger.cpp.obj"
-},
-{
-  "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/shader_tricolor.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/shader_tricolor.dir/src/shader_tricolor.cpp.obj -c /home/green/openGL/proj/src/shader_tricolor.cpp",
-  "file": "/home/green/openGL/proj/src/shader_tricolor.cpp",
-  "output": "CMakeFiles/shader_tricolor.dir/src/shader_tricolor.cpp.obj"
-},
-{
-  "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/shader_tricolor.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/shader_tricolor.dir/src/opengl_util.cpp.obj -c /home/green/openGL/proj/src/opengl_util.cpp",
-  "file": "/home/green/openGL/proj/src/opengl_util.cpp",
-  "output": "CMakeFiles/shader_tricolor.dir/src/opengl_util.cpp.obj"
-},
-{
-  "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-gcc  @CMakeFiles/shader_tricolor.dir/includes_C.rsp -g -o CMakeFiles/shader_tricolor.dir/src/glad.c.obj -c /home/green/openGL/proj/src/glad.c",
-  "file": "/home/green/openGL/proj/src/glad.c",
-  "output": "CMakeFiles/shader_tricolor.dir/src/glad.c.obj"
-},
-{
-  "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/shader_tricolor.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/shader_tricolor.dir/src/logger.cpp.obj -c /home/green/openGL/proj/src/logger.cpp",
-  "file": "/home/green/openGL/proj/src/logger.cpp",
-  "output": "CMakeFiles/shader_tricolor.dir/src/logger.cpp.obj"
-},
-{
-  "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/shader_pulse.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/shader_pulse.dir/src/shader_pulse.cpp.obj -c /home/green/openGL/proj/src/shader_pulse.cpp",
-  "file": "/home/green/openGL/proj/src/shader_pulse.cpp",
-  "output": "CMakeFiles/shader_pulse.dir/src/shader_pulse.cpp.obj"
-},
-{
-  "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/shader_pulse.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/shader_pulse.dir/src/opengl_util.cpp.obj -c /home/green/openGL/proj/src/opengl_util.cpp",
-  "file": "/home/green/openGL/proj/src/opengl_util.cpp",
-  "output": "CMakeFiles/shader_pulse.dir/src/opengl_util.cpp.obj"
-},
-{
-  "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-gcc  @CMakeFiles/shader_pulse.dir/includes_C.rsp -g -o CMakeFiles/shader_pulse.dir/src/glad.c.obj -c /home/green/openGL/proj/src/glad.c",
-  "file": "/home/green/openGL/proj/src/glad.c",
-  "output": "CMakeFiles/shader_pulse.dir/src/glad.c.obj"
-},
-{
-  "directory": "/home/green/openGL/proj/build",
-  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/shader_pulse.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/shader_pulse.dir/src/logger.cpp.obj -c /home/green/openGL/proj/src/logger.cpp",
-  "file": "/home/green/openGL/proj/src/logger.cpp",
-  "output": "CMakeFiles/shader_pulse.dir/src/logger.cpp.obj"
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/shader_template2.dir/includes_CXX.rsp -g -std=gnu++20 -o CMakeFiles/shader_template2.dir/src/shader_ex2.cpp.obj -c /home/green/openGL/proj/src/shader_ex2.cpp",
+  "file": "/home/green/openGL/proj/src/shader_ex2.cpp",
+  "output": "CMakeFiles/shader_template2.dir/src/shader_ex2.cpp.obj"
 }
 ]

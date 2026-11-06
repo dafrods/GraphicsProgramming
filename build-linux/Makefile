@@ -120,17 +120,43 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named shader
+# Target rules for targets named opengl_common
 
 # Build rule for target.
-shader: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shader
-.PHONY : shader
+opengl_common: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 opengl_common
+.PHONY : opengl_common
 
 # fast build rule for target.
-shader/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/build
-.PHONY : shader/fast
+opengl_common/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/build
+.PHONY : opengl_common/fast
+
+#=============================================================================
+# Target rules for targets named shader_template
+
+# Build rule for target.
+shader_template: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shader_template
+.PHONY : shader_template
+
+# fast build rule for target.
+shader_template/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_template.dir/build.make CMakeFiles/shader_template.dir/build
+.PHONY : shader_template/fast
+
+#=============================================================================
+# Target rules for targets named shader_template2
+
+# Build rule for target.
+shader_template2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shader_template2
+.PHONY : shader_template2
+
+# fast build rule for target.
+shader_template2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_template2.dir/build.make CMakeFiles/shader_template2.dir/build
+.PHONY : shader_template2/fast
 
 #=============================================================================
 # Convenience rules to build test dependencies.
@@ -145,7 +171,7 @@ src/glad.o: src/glad.c.o
 
 # target to build an object file
 src/glad.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/glad.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/glad.c.o
 .PHONY : src/glad.c.o
 
 src/glad.i: src/glad.c.i
@@ -153,7 +179,7 @@ src/glad.i: src/glad.c.i
 
 # target to preprocess a source file
 src/glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/glad.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/glad.c.i
 .PHONY : src/glad.c.i
 
 src/glad.s: src/glad.c.s
@@ -161,7 +187,7 @@ src/glad.s: src/glad.c.s
 
 # target to generate assembly for a file
 src/glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/glad.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/glad.c.s
 .PHONY : src/glad.c.s
 
 src/logger.o: src/logger.cpp.o
@@ -169,7 +195,7 @@ src/logger.o: src/logger.cpp.o
 
 # target to build an object file
 src/logger.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/logger.cpp.o
 .PHONY : src/logger.cpp.o
 
 src/logger.i: src/logger.cpp.i
@@ -177,7 +203,7 @@ src/logger.i: src/logger.cpp.i
 
 # target to preprocess a source file
 src/logger.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/logger.cpp.i
 .PHONY : src/logger.cpp.i
 
 src/logger.s: src/logger.cpp.s
@@ -185,7 +211,7 @@ src/logger.s: src/logger.cpp.s
 
 # target to generate assembly for a file
 src/logger.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/logger.cpp.s
 .PHONY : src/logger.cpp.s
 
 src/opengl_util.o: src/opengl_util.cpp.o
@@ -193,7 +219,7 @@ src/opengl_util.o: src/opengl_util.cpp.o
 
 # target to build an object file
 src/opengl_util.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/opengl_util.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/opengl_util.cpp.o
 .PHONY : src/opengl_util.cpp.o
 
 src/opengl_util.i: src/opengl_util.cpp.i
@@ -201,7 +227,7 @@ src/opengl_util.i: src/opengl_util.cpp.i
 
 # target to preprocess a source file
 src/opengl_util.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/opengl_util.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/opengl_util.cpp.i
 .PHONY : src/opengl_util.cpp.i
 
 src/opengl_util.s: src/opengl_util.cpp.s
@@ -209,7 +235,7 @@ src/opengl_util.s: src/opengl_util.cpp.s
 
 # target to generate assembly for a file
 src/opengl_util.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/opengl_util.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/opengl_util.cpp.s
 .PHONY : src/opengl_util.cpp.s
 
 src/shader.o: src/shader.cpp.o
@@ -217,7 +243,7 @@ src/shader.o: src/shader.cpp.o
 
 # target to build an object file
 src/shader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/shader.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/shader.cpp.o
 .PHONY : src/shader.cpp.o
 
 src/shader.i: src/shader.cpp.i
@@ -225,7 +251,7 @@ src/shader.i: src/shader.cpp.i
 
 # target to preprocess a source file
 src/shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/shader.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/shader.cpp.i
 .PHONY : src/shader.cpp.i
 
 src/shader.s: src/shader.cpp.s
@@ -233,8 +259,56 @@ src/shader.s: src/shader.cpp.s
 
 # target to generate assembly for a file
 src/shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/shader.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/shader.cpp.s
 .PHONY : src/shader.cpp.s
+
+src/shader_ex1.o: src/shader_ex1.cpp.o
+.PHONY : src/shader_ex1.o
+
+# target to build an object file
+src/shader_ex1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_template.dir/build.make CMakeFiles/shader_template.dir/src/shader_ex1.cpp.o
+.PHONY : src/shader_ex1.cpp.o
+
+src/shader_ex1.i: src/shader_ex1.cpp.i
+.PHONY : src/shader_ex1.i
+
+# target to preprocess a source file
+src/shader_ex1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_template.dir/build.make CMakeFiles/shader_template.dir/src/shader_ex1.cpp.i
+.PHONY : src/shader_ex1.cpp.i
+
+src/shader_ex1.s: src/shader_ex1.cpp.s
+.PHONY : src/shader_ex1.s
+
+# target to generate assembly for a file
+src/shader_ex1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_template.dir/build.make CMakeFiles/shader_template.dir/src/shader_ex1.cpp.s
+.PHONY : src/shader_ex1.cpp.s
+
+src/shader_ex2.o: src/shader_ex2.cpp.o
+.PHONY : src/shader_ex2.o
+
+# target to build an object file
+src/shader_ex2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_template2.dir/build.make CMakeFiles/shader_template2.dir/src/shader_ex2.cpp.o
+.PHONY : src/shader_ex2.cpp.o
+
+src/shader_ex2.i: src/shader_ex2.cpp.i
+.PHONY : src/shader_ex2.i
+
+# target to preprocess a source file
+src/shader_ex2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_template2.dir/build.make CMakeFiles/shader_template2.dir/src/shader_ex2.cpp.i
+.PHONY : src/shader_ex2.cpp.i
+
+src/shader_ex2.s: src/shader_ex2.cpp.s
+.PHONY : src/shader_ex2.s
+
+# target to generate assembly for a file
+src/shader_ex2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_template2.dir/build.make CMakeFiles/shader_template2.dir/src/shader_ex2.cpp.s
+.PHONY : src/shader_ex2.cpp.s
 
 # Help Target
 help:
@@ -244,7 +318,9 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... shader"
+	@echo "... opengl_common"
+	@echo "... shader_template"
+	@echo "... shader_template2"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
@@ -257,6 +333,12 @@ help:
 	@echo "... src/shader.o"
 	@echo "... src/shader.i"
 	@echo "... src/shader.s"
+	@echo "... src/shader_ex1.o"
+	@echo "... src/shader_ex1.i"
+	@echo "... src/shader_ex1.s"
+	@echo "... src/shader_ex2.o"
+	@echo "... src/shader_ex2.i"
+	@echo "... src/shader_ex2.s"
 .PHONY : help
 
 

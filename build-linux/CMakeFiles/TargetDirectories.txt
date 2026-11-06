@@ -1,3 +1,5 @@
-/home/green/openGL/proj/build-linux/CMakeFiles/shader.dir
+/home/green/openGL/proj/build-linux/CMakeFiles/opengl_common.dir
+/home/green/openGL/proj/build-linux/CMakeFiles/shader_template.dir
+/home/green/openGL/proj/build-linux/CMakeFiles/shader_template2.dir
 /home/green/openGL/proj/build-linux/CMakeFiles/edit_cache.dir
 /home/green/openGL/proj/build-linux/CMakeFiles/rebuild_cache.dir

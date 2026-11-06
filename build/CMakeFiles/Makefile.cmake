@@ -59,7 +59,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/shader.dir/DependInfo.cmake"
-  "CMakeFiles/shader_tricolor.dir/DependInfo.cmake"
-  "CMakeFiles/shader_pulse.dir/DependInfo.cmake"
+  "CMakeFiles/opengl_common.dir/DependInfo.cmake"
+  "CMakeFiles/shader_template.dir/DependInfo.cmake"
+  "CMakeFiles/shader_template2.dir/DependInfo.cmake"
   )

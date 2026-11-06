@@ -224,15 +224,6 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-OPENGL_SANDBOX_BINARY_DIR:STATIC=/home/green/openGL/proj/build-linux
-
-//Value Computed by CMake
-OPENGL_SANDBOX_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-OPENGL_SANDBOX_SOURCE_DIR:STATIC=/home/green/openGL/proj
-
-//Value Computed by CMake
 opengl_BINARY_DIR:STATIC=/home/green/openGL/proj/build-linux
 
 //Value Computed by CMake

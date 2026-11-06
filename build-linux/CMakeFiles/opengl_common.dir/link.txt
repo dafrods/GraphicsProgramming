@@ -1,0 +1,2 @@
+/usr/bin/ar qc libopengl_common.a CMakeFiles/opengl_common.dir/src/glad.c.o CMakeFiles/opengl_common.dir/src/opengl_util.cpp.o CMakeFiles/opengl_common.dir/src/logger.cpp.o CMakeFiles/opengl_common.dir/src/shader.cpp.o
+/usr/bin/ranlib libopengl_common.a

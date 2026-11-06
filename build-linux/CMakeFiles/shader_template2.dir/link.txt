@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/shader_template2.dir/link.d CMakeFiles/shader_template2.dir/src/shader_ex2.cpp.o -o shader_template2  libopengl_common.a /home/green/openGL/GLFW/build-linux/src/libglfw3.a /home/green/openGL/proj/third-party/spdlog/build/libspdlog.a -lGL

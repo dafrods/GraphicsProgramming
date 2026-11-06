@@ -251,18 +251,6 @@ CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=/home/green/toolchains/mingw-w64.cmake
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//No help, variable specified on the command line.
-FOR_W64:UNINITIALIZED=ON
-
-//Value Computed by CMake
-OPENGL_SANDBOX_BINARY_DIR:STATIC=/home/green/openGL/proj/build
-
-//Value Computed by CMake
-OPENGL_SANDBOX_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-OPENGL_SANDBOX_SOURCE_DIR:STATIC=/home/green/openGL/proj
-
 //Value Computed by CMake
 opengl_BINARY_DIR:STATIC=/home/green/openGL/proj/build
 
@@ -271,15 +259,6 @@ opengl_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 opengl_SOURCE_DIR:STATIC=/home/green/openGL/proj
-
-//Value Computed by CMake
-sww_BINARY_DIR:STATIC=/home/green/openGL/proj/build
-
-//Value Computed by CMake
-sww_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-sww_SOURCE_DIR:STATIC=/home/green/openGL/proj
 
 
 ########################
