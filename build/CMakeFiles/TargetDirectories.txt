@@ -1,3 +1,5 @@
 /home/green/openGL/proj/build/CMakeFiles/shader.dir
+/home/green/openGL/proj/build/CMakeFiles/shader_tricolor.dir
+/home/green/openGL/proj/build/CMakeFiles/shader_pulse.dir
 /home/green/openGL/proj/build/CMakeFiles/edit_cache.dir
 /home/green/openGL/proj/build/CMakeFiles/rebuild_cache.dir

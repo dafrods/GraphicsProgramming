@@ -57,3 +57,5 @@ function(add_gl_program TARGET SOURCE)
 endfunction()
 
 add_gl_program(shader src/shader.cpp)
+add_gl_program(shader_tricolor src/shader_tricolor.cpp)
+add_gl_program(shader_pulse src/shader_pulse.cpp)

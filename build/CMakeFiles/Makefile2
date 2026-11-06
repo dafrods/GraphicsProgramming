@@ -67,10 +67,14 @@ CMAKE_BINARY_DIR = /home/green/openGL/proj/build
 
 # The main recursive "all" target.
 all: CMakeFiles/shader.dir/all
+all: CMakeFiles/shader_tricolor.dir/all
+all: CMakeFiles/shader_pulse.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/shader.dir/codegen
+codegen: CMakeFiles/shader_tricolor.dir/codegen
+codegen: CMakeFiles/shader_pulse.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -79,6 +83,8 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/shader.dir/clean
+clean: CMakeFiles/shader_tricolor.dir/clean
+clean: CMakeFiles/shader_pulse.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -112,6 +118,70 @@ CMakeFiles/shader.dir/codegen:
 CMakeFiles/shader.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/clean
 .PHONY : CMakeFiles/shader.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/shader_tricolor.dir
+
+# All Build rule for target.
+CMakeFiles/shader_tricolor.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/green/openGL/proj/build/CMakeFiles --progress-num=11,12,13,14,15 "Built target shader_tricolor"
+.PHONY : CMakeFiles/shader_tricolor.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/shader_tricolor.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/green/openGL/proj/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/shader_tricolor.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/green/openGL/proj/build/CMakeFiles 0
+.PHONY : CMakeFiles/shader_tricolor.dir/rule
+
+# Convenience name for target.
+shader_tricolor: CMakeFiles/shader_tricolor.dir/rule
+.PHONY : shader_tricolor
+
+# codegen rule for target.
+CMakeFiles/shader_tricolor.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/green/openGL/proj/build/CMakeFiles --progress-num=11,12,13,14,15 "Finished codegen for target shader_tricolor"
+.PHONY : CMakeFiles/shader_tricolor.dir/codegen
+
+# clean rule for target.
+CMakeFiles/shader_tricolor.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/clean
+.PHONY : CMakeFiles/shader_tricolor.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/shader_pulse.dir
+
+# All Build rule for target.
+CMakeFiles/shader_pulse.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/green/openGL/proj/build/CMakeFiles --progress-num=6,7,8,9,10 "Built target shader_pulse"
+.PHONY : CMakeFiles/shader_pulse.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/shader_pulse.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/green/openGL/proj/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/shader_pulse.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/green/openGL/proj/build/CMakeFiles 0
+.PHONY : CMakeFiles/shader_pulse.dir/rule
+
+# Convenience name for target.
+shader_pulse: CMakeFiles/shader_pulse.dir/rule
+.PHONY : shader_pulse
+
+# codegen rule for target.
+CMakeFiles/shader_pulse.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/green/openGL/proj/build/CMakeFiles --progress-num=6,7,8,9,10 "Finished codegen for target shader_pulse"
+.PHONY : CMakeFiles/shader_pulse.dir/codegen
+
+# clean rule for target.
+CMakeFiles/shader_pulse.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/clean
+.PHONY : CMakeFiles/shader_pulse.dir/clean
 
 #=============================================================================
 # Targets to build the dependencies of tests.

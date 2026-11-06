@@ -133,6 +133,32 @@ shader/fast:
 .PHONY : shader/fast
 
 #=============================================================================
+# Target rules for targets named shader_tricolor
+
+# Build rule for target.
+shader_tricolor: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shader_tricolor
+.PHONY : shader_tricolor
+
+# fast build rule for target.
+shader_tricolor/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/build
+.PHONY : shader_tricolor/fast
+
+#=============================================================================
+# Target rules for targets named shader_pulse
+
+# Build rule for target.
+shader_pulse: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 shader_pulse
+.PHONY : shader_pulse
+
+# fast build rule for target.
+shader_pulse/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/build
+.PHONY : shader_pulse/fast
+
+#=============================================================================
 # Convenience rules to build test dependencies.
 
 # Build the dependencies of a test.
@@ -146,6 +172,8 @@ src/glad.obj: src/glad.c.obj
 # target to build an object file
 src/glad.c.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/glad.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/src/glad.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/src/glad.c.obj
 .PHONY : src/glad.c.obj
 
 src/glad.i: src/glad.c.i
@@ -154,6 +182,8 @@ src/glad.i: src/glad.c.i
 # target to preprocess a source file
 src/glad.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/glad.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/src/glad.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/src/glad.c.i
 .PHONY : src/glad.c.i
 
 src/glad.s: src/glad.c.s
@@ -162,6 +192,8 @@ src/glad.s: src/glad.c.s
 # target to generate assembly for a file
 src/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/glad.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/src/glad.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/src/glad.c.s
 .PHONY : src/glad.c.s
 
 src/logger.obj: src/logger.cpp.obj
@@ -170,6 +202,8 @@ src/logger.obj: src/logger.cpp.obj
 # target to build an object file
 src/logger.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/logger.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/src/logger.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/src/logger.cpp.obj
 .PHONY : src/logger.cpp.obj
 
 src/logger.i: src/logger.cpp.i
@@ -178,6 +212,8 @@ src/logger.i: src/logger.cpp.i
 # target to preprocess a source file
 src/logger.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/src/logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/src/logger.cpp.i
 .PHONY : src/logger.cpp.i
 
 src/logger.s: src/logger.cpp.s
@@ -186,6 +222,8 @@ src/logger.s: src/logger.cpp.s
 # target to generate assembly for a file
 src/logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/src/logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/src/logger.cpp.s
 .PHONY : src/logger.cpp.s
 
 src/opengl_util.obj: src/opengl_util.cpp.obj
@@ -194,6 +232,8 @@ src/opengl_util.obj: src/opengl_util.cpp.obj
 # target to build an object file
 src/opengl_util.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/opengl_util.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/src/opengl_util.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/src/opengl_util.cpp.obj
 .PHONY : src/opengl_util.cpp.obj
 
 src/opengl_util.i: src/opengl_util.cpp.i
@@ -202,6 +242,8 @@ src/opengl_util.i: src/opengl_util.cpp.i
 # target to preprocess a source file
 src/opengl_util.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/opengl_util.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/src/opengl_util.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/src/opengl_util.cpp.i
 .PHONY : src/opengl_util.cpp.i
 
 src/opengl_util.s: src/opengl_util.cpp.s
@@ -210,6 +252,8 @@ src/opengl_util.s: src/opengl_util.cpp.s
 # target to generate assembly for a file
 src/opengl_util.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/opengl_util.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/src/opengl_util.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/src/opengl_util.cpp.s
 .PHONY : src/opengl_util.cpp.s
 
 src/shader.obj: src/shader.cpp.obj
@@ -236,6 +280,54 @@ src/shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader.dir/build.make CMakeFiles/shader.dir/src/shader.cpp.s
 .PHONY : src/shader.cpp.s
 
+src/shader_pulse.obj: src/shader_pulse.cpp.obj
+.PHONY : src/shader_pulse.obj
+
+# target to build an object file
+src/shader_pulse.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/src/shader_pulse.cpp.obj
+.PHONY : src/shader_pulse.cpp.obj
+
+src/shader_pulse.i: src/shader_pulse.cpp.i
+.PHONY : src/shader_pulse.i
+
+# target to preprocess a source file
+src/shader_pulse.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/src/shader_pulse.cpp.i
+.PHONY : src/shader_pulse.cpp.i
+
+src/shader_pulse.s: src/shader_pulse.cpp.s
+.PHONY : src/shader_pulse.s
+
+# target to generate assembly for a file
+src/shader_pulse.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_pulse.dir/build.make CMakeFiles/shader_pulse.dir/src/shader_pulse.cpp.s
+.PHONY : src/shader_pulse.cpp.s
+
+src/shader_tricolor.obj: src/shader_tricolor.cpp.obj
+.PHONY : src/shader_tricolor.obj
+
+# target to build an object file
+src/shader_tricolor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/src/shader_tricolor.cpp.obj
+.PHONY : src/shader_tricolor.cpp.obj
+
+src/shader_tricolor.i: src/shader_tricolor.cpp.i
+.PHONY : src/shader_tricolor.i
+
+# target to preprocess a source file
+src/shader_tricolor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/src/shader_tricolor.cpp.i
+.PHONY : src/shader_tricolor.cpp.i
+
+src/shader_tricolor.s: src/shader_tricolor.cpp.s
+.PHONY : src/shader_tricolor.s
+
+# target to generate assembly for a file
+src/shader_tricolor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/shader_tricolor.dir/build.make CMakeFiles/shader_tricolor.dir/src/shader_tricolor.cpp.s
+.PHONY : src/shader_tricolor.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -245,6 +337,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... shader"
+	@echo "... shader_pulse"
+	@echo "... shader_tricolor"
 	@echo "... src/glad.obj"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
@@ -257,6 +351,12 @@ help:
 	@echo "... src/shader.obj"
 	@echo "... src/shader.i"
 	@echo "... src/shader.s"
+	@echo "... src/shader_pulse.obj"
+	@echo "... src/shader_pulse.i"
+	@echo "... src/shader_pulse.s"
+	@echo "... src/shader_tricolor.obj"
+	@echo "... src/shader_tricolor.i"
+	@echo "... src/shader_tricolor.s"
 .PHONY : help
 
 

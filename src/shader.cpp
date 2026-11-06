@@ -26,6 +26,20 @@ const char* vertexShaderSource = R"(
     }
 )";
 
+const char* vertexShaderSourceV2 = R"(
+    #version 330 core
+    layout (location = 0) in vec3 aPos;   // the position variable has attribute position 0
+    layout (location = 1) in vec3 aColor; // the color variable has attribute position 1
+    
+    out vec3 ourColor; // output a color to the fragment shader
+
+    void main()
+    {
+        gl_Position = vec4(aPos, 1.0);
+        ourColor = aColor; // set ourColor to the input color we got from the vertex data
+    }    
+)";
+
 const char* fragmentShaderSource = R"(
     #version 330 core
     out vec4 FragColor;
@@ -49,6 +63,20 @@ const char* uniformTestfragmentShaderSource = R"(
         FragColor = ourColor;
     }   
 )";
+
+const char *fragmentShaderSourceV2 = R"(
+    #version 330 core
+    out vec4 FragColor;
+    
+    in vec3 ourColor; // the input variable from the vertex shader (same name and same type)  
+
+    void main()
+    {
+        FragColor = vec4(ourColor, 1.0);
+    } 
+)";
+
+
 
 // ************************************************************************************************
 
@@ -112,7 +140,7 @@ int main()
 
     // VERTEX SHADER
     unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+    glShaderSource(vertexShader, 1, &vertexShaderSourceV2, NULL);
     glCompileShader(vertexShader);
     int success;
     char infoLog[512];
@@ -125,7 +153,7 @@ int main()
 
     // FRAGMENT SHADER
     unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, &uniformTestfragmentShaderSource, NULL);
+    glShaderSource(fragmentShader, 1, &fragmentShaderSourceV2, NULL);
     // check for shader compile errors
     glCompileShader(fragmentShader);
     // check for shader compile errors
@@ -154,31 +182,54 @@ int main()
 //  Vertex Handling
 // ************************************************************************************************
 
-    float vertices[] = {
-        -0.5f, -0.5f, 0.0f, // left  
-         0.5f, -0.5f, 0.0f, // right 
-         0.0f,  0.5f, 0.0f  // top   
-    }; 
+    // float vertices[] = {
+    //     -0.5f, -0.5f, 0.0f, // left  
+    //      0.5f, -0.5f, 0.0f, // right 
+    //      0.0f,  0.5f, 0.0f  // top   
+    // }; 
 
+    // unsigned int VBO, VAO;
+    // glGenVertexArrays(1, &VAO);
+    // glGenBuffers(1, &VBO);
+    // // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
+    // glBindVertexArray(VAO);
+
+    // glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    // glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+    // glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    // glEnableVertexAttribArray(0);
+
+    // // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
+    // glBindBuffer(GL_ARRAY_BUFFER, 0); 
+
+    // // You can unbind the VAO afterwards so other VAO calls won't accidentally modify this VAO, but this rarely happens. Modifying other
+    // // VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
+    // glBindVertexArray(0); 
+
+    float vertices[] = {
+    // positions         // colors
+     0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   // bottom right
+    -0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,   // bottom left
+     0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f    // top 
+    };    
+
+    // Bind and send data to buffers
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
-    // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
     glBindVertexArray(VAO);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    // Position attribute
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
-    glBindBuffer(GL_ARRAY_BUFFER, 0); 
-
-    // You can unbind the VAO afterwards so other VAO calls won't accidentally modify this VAO, but this rarely happens. Modifying other
-    // VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
-    glBindVertexArray(0); 
-
+    // Color attribute
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
 
 // ************************************************************************************************
 //  Main Loop
@@ -195,10 +246,11 @@ int main()
 
         glUseProgram(shaderProgram);
 
-        float timeValue = glfwGetTime();
-        float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
-        int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
-        glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+        // Borked, non functioning uniform
+        // float timeValue = glfwGetTime();
+        // float greenValue = (sin(timeValue) / 2.0f) + 0.5f;
+        // int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
+        // glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
 
         glBindVertexArray(VAO); 
         glDrawArrays(GL_TRIANGLES, 0, 3);
