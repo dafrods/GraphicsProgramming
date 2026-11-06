@@ -16,10 +16,10 @@ if(WIN32)
 endif()
 
 add_library(opengl_common STATIC
-        src/glad.c
-        src/opengl_util.cpp
-        src/logger.cpp
-        src/shader.cpp
+        src/common/glad.c
+        src/common/opengl_util.cpp
+        src/common/logger.cpp
+        src/common/shader.cpp
 )
 
 target_include_directories(opengl_common PUBLIC

@@ -166,101 +166,101 @@ test_prep/all: cmake_check_build_system
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_prep/all
 .PHONY : test_prep/all
 
-src/glad.obj: src/glad.c.obj
-.PHONY : src/glad.obj
+src/common/glad.obj: src/common/glad.c.obj
+.PHONY : src/common/glad.obj
 
 # target to build an object file
-src/glad.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/glad.c.obj
-.PHONY : src/glad.c.obj
+src/common/glad.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/common/glad.c.obj
+.PHONY : src/common/glad.c.obj
 
-src/glad.i: src/glad.c.i
-.PHONY : src/glad.i
+src/common/glad.i: src/common/glad.c.i
+.PHONY : src/common/glad.i
 
 # target to preprocess a source file
-src/glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/glad.c.i
-.PHONY : src/glad.c.i
+src/common/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/common/glad.c.i
+.PHONY : src/common/glad.c.i
 
-src/glad.s: src/glad.c.s
-.PHONY : src/glad.s
+src/common/glad.s: src/common/glad.c.s
+.PHONY : src/common/glad.s
 
 # target to generate assembly for a file
-src/glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/glad.c.s
-.PHONY : src/glad.c.s
+src/common/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/common/glad.c.s
+.PHONY : src/common/glad.c.s
 
-src/logger.obj: src/logger.cpp.obj
-.PHONY : src/logger.obj
+src/common/logger.obj: src/common/logger.cpp.obj
+.PHONY : src/common/logger.obj
 
 # target to build an object file
-src/logger.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/logger.cpp.obj
-.PHONY : src/logger.cpp.obj
+src/common/logger.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/common/logger.cpp.obj
+.PHONY : src/common/logger.cpp.obj
 
-src/logger.i: src/logger.cpp.i
-.PHONY : src/logger.i
+src/common/logger.i: src/common/logger.cpp.i
+.PHONY : src/common/logger.i
 
 # target to preprocess a source file
-src/logger.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/logger.cpp.i
-.PHONY : src/logger.cpp.i
+src/common/logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/common/logger.cpp.i
+.PHONY : src/common/logger.cpp.i
 
-src/logger.s: src/logger.cpp.s
-.PHONY : src/logger.s
+src/common/logger.s: src/common/logger.cpp.s
+.PHONY : src/common/logger.s
 
 # target to generate assembly for a file
-src/logger.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/logger.cpp.s
-.PHONY : src/logger.cpp.s
+src/common/logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/common/logger.cpp.s
+.PHONY : src/common/logger.cpp.s
 
-src/opengl_util.obj: src/opengl_util.cpp.obj
-.PHONY : src/opengl_util.obj
+src/common/opengl_util.obj: src/common/opengl_util.cpp.obj
+.PHONY : src/common/opengl_util.obj
 
 # target to build an object file
-src/opengl_util.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/opengl_util.cpp.obj
-.PHONY : src/opengl_util.cpp.obj
+src/common/opengl_util.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/common/opengl_util.cpp.obj
+.PHONY : src/common/opengl_util.cpp.obj
 
-src/opengl_util.i: src/opengl_util.cpp.i
-.PHONY : src/opengl_util.i
+src/common/opengl_util.i: src/common/opengl_util.cpp.i
+.PHONY : src/common/opengl_util.i
 
 # target to preprocess a source file
-src/opengl_util.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/opengl_util.cpp.i
-.PHONY : src/opengl_util.cpp.i
+src/common/opengl_util.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/common/opengl_util.cpp.i
+.PHONY : src/common/opengl_util.cpp.i
 
-src/opengl_util.s: src/opengl_util.cpp.s
-.PHONY : src/opengl_util.s
+src/common/opengl_util.s: src/common/opengl_util.cpp.s
+.PHONY : src/common/opengl_util.s
 
 # target to generate assembly for a file
-src/opengl_util.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/opengl_util.cpp.s
-.PHONY : src/opengl_util.cpp.s
+src/common/opengl_util.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/common/opengl_util.cpp.s
+.PHONY : src/common/opengl_util.cpp.s
 
-src/shader.obj: src/shader.cpp.obj
-.PHONY : src/shader.obj
+src/common/shader.obj: src/common/shader.cpp.obj
+.PHONY : src/common/shader.obj
 
 # target to build an object file
-src/shader.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/shader.cpp.obj
-.PHONY : src/shader.cpp.obj
+src/common/shader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/common/shader.cpp.obj
+.PHONY : src/common/shader.cpp.obj
 
-src/shader.i: src/shader.cpp.i
-.PHONY : src/shader.i
+src/common/shader.i: src/common/shader.cpp.i
+.PHONY : src/common/shader.i
 
 # target to preprocess a source file
-src/shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/shader.cpp.i
-.PHONY : src/shader.cpp.i
+src/common/shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/common/shader.cpp.i
+.PHONY : src/common/shader.cpp.i
 
-src/shader.s: src/shader.cpp.s
-.PHONY : src/shader.s
+src/common/shader.s: src/common/shader.cpp.s
+.PHONY : src/common/shader.s
 
 # target to generate assembly for a file
-src/shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/shader.cpp.s
-.PHONY : src/shader.cpp.s
+src/common/shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opengl_common.dir/build.make CMakeFiles/opengl_common.dir/src/common/shader.cpp.s
+.PHONY : src/common/shader.cpp.s
 
 src/shader_ex1.obj: src/shader_ex1.cpp.obj
 .PHONY : src/shader_ex1.obj
@@ -321,18 +321,18 @@ help:
 	@echo "... opengl_common"
 	@echo "... shader_template"
 	@echo "... shader_template2"
-	@echo "... src/glad.obj"
-	@echo "... src/glad.i"
-	@echo "... src/glad.s"
-	@echo "... src/logger.obj"
-	@echo "... src/logger.i"
-	@echo "... src/logger.s"
-	@echo "... src/opengl_util.obj"
-	@echo "... src/opengl_util.i"
-	@echo "... src/opengl_util.s"
-	@echo "... src/shader.obj"
-	@echo "... src/shader.i"
-	@echo "... src/shader.s"
+	@echo "... src/common/glad.obj"
+	@echo "... src/common/glad.i"
+	@echo "... src/common/glad.s"
+	@echo "... src/common/logger.obj"
+	@echo "... src/common/logger.i"
+	@echo "... src/common/logger.s"
+	@echo "... src/common/opengl_util.obj"
+	@echo "... src/common/opengl_util.i"
+	@echo "... src/common/opengl_util.s"
+	@echo "... src/common/shader.obj"
+	@echo "... src/common/shader.i"
+	@echo "... src/common/shader.s"
 	@echo "... src/shader_ex1.obj"
 	@echo "... src/shader_ex1.i"
 	@echo "... src/shader_ex1.s"
