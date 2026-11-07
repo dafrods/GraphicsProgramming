@@ -3,3 +3,4 @@ build
 third-party
 .cache
 .vscode
+.clangd

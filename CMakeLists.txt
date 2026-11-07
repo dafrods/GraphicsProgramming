@@ -59,5 +59,10 @@ function(add_gl_program TARGET SOURCE)
     target_link_libraries(${TARGET} PRIVATE opengl_common)
 endfunction()
 
-add_gl_program(shader_template src/shader_ex1.cpp)
-add_gl_program(shader_template2 src/shader_ex2.cpp)
+
+# add_gl_program(input_test src/input.cpp)
+# add_gl_program(texture src/texture.cpp)
+add_gl_program(texture-extend src/texture-extend.cpp)
+# add_gl_program(texture_opengl src/texture_opengl.cpp)
+# add_gl_program(shader_template src/shader_ex1.cpp)
+# add_gl_program(shader_template2 src/shader_ex2.cpp)
