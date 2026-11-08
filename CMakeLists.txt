@@ -33,25 +33,21 @@ target_include_directories(opengl_common PUBLIC
 
 target_link_libraries(opengl_common PUBLIC
     glfw
-    spdlog::spdlog
-    glm::glm
+    spdlog
+    glm
 )
 
+# Needed by GLAD
+
 if(WIN32)
-target_link_libraries(opengl_common PUBLIC
-    # $ENV{HOME}/openGL/GLFW/build-w64/src/libglfw3.a
-    # $ENV{HOME}/openGL/proj/third-party/spdlog/build-w64/libspdlog.a 
-    # $ENV{HOME}/openGL/proj/third-party/glm/build-w64/glm/libglm.a
+target_link_libraries(opengl_common PRIVATE
     opengl32
     gdi32
     user32
     shell32
 )
 elseif(LINUX)
-target_link_libraries(opengl_common PUBLIC
-    # $ENV{HOME}/openGL/GLFW/build-linux/src/libglfw3.a
-    # $ENV{HOME}/openGL/proj/third-party/spdlog/build/libspdlog.a 
-    # $ENV{HOME}/openGL/proj/third-party/glm/build/glm/libglm.a
+target_link_libraries(opengl_common PRIVATE
     GL
 )
 endif()

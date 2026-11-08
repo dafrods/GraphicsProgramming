@@ -21,18 +21,21 @@
       "binaryDir": "${sourceDir}/build-linux",
       "cacheVariables": {
             "CMAKE_CXX_STANDARD":"20",
-            "CMAKE_BUILD_TYPE": "Debug"
+            "CMAKE_BUILD_TYPE": "Debug",
+            "GLFW_BUILD_WIN32":false
       }
     },
     {
-      "name": "default-w64-release",
+      "name": "release-w64",
       "displayName": "Default Build",
       "description": "Default Build Preset",
       "binaryDir": "${sourceDir}/build-w64-release",
       "cacheVariables": {
             "CMAKE_CXX_STANDARD":"20",
             "CMAKE_TOOLCHAIN_FILE":"/home/green/toolchains/mingw-w64.cmake",
-            "CMAKE_BUILD_TYPE": "MinSizeRel"
+            "CMAKE_BUILD_TYPE": "MinSizeRel",
+            "GLFW_BUILD_X11":false,
+            "GLFW_BUILD_WAYLAND":false
       }
     }
   ]
