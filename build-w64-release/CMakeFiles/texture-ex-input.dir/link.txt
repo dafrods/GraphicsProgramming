@@ -1,0 +1,3 @@
+/home/green/Downloads/cmake-4.5.0-rc1-linux-x86_64/bin/cmake -E rm -f CMakeFiles/texture-ex-input.dir/objects.a
+/usr/bin/x86_64-w64-mingw32-ar qc CMakeFiles/texture-ex-input.dir/objects.a @CMakeFiles/texture-ex-input.dir/objects1.rsp
+/usr/bin/x86_64-w64-mingw32-g++ -Os -DNDEBUG -static -mwindows -Wl,--whole-archive CMakeFiles/texture-ex-input.dir/objects.a -Wl,--no-whole-archive -o texture-ex-input.exe -Wl,--out-implib,libtexture-ex-input.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles/texture-ex-input.dir/linkLibs.rsp

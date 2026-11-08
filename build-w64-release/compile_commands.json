@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/green/openGL/proj/build-w64-release",
+  "command": "/usr/bin/x86_64-w64-mingw32-gcc  @CMakeFiles/opengl_common.dir/includes_C.rsp -Os -DNDEBUG -o CMakeFiles/opengl_common.dir/src/common/glad.c.obj -c /home/green/openGL/proj/src/common/glad.c",
+  "file": "/home/green/openGL/proj/src/common/glad.c",
+  "output": "CMakeFiles/opengl_common.dir/src/common/glad.c.obj"
+},
+{
+  "directory": "/home/green/openGL/proj/build-w64-release",
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/opengl_common.dir/includes_CXX.rsp -Os -DNDEBUG -std=gnu++20 -o CMakeFiles/opengl_common.dir/src/common/opengl_util.cpp.obj -c /home/green/openGL/proj/src/common/opengl_util.cpp",
+  "file": "/home/green/openGL/proj/src/common/opengl_util.cpp",
+  "output": "CMakeFiles/opengl_common.dir/src/common/opengl_util.cpp.obj"
+},
+{
+  "directory": "/home/green/openGL/proj/build-w64-release",
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/opengl_common.dir/includes_CXX.rsp -Os -DNDEBUG -std=gnu++20 -o CMakeFiles/opengl_common.dir/src/common/logger.cpp.obj -c /home/green/openGL/proj/src/common/logger.cpp",
+  "file": "/home/green/openGL/proj/src/common/logger.cpp",
+  "output": "CMakeFiles/opengl_common.dir/src/common/logger.cpp.obj"
+},
+{
+  "directory": "/home/green/openGL/proj/build-w64-release",
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/opengl_common.dir/includes_CXX.rsp -Os -DNDEBUG -std=gnu++20 -o CMakeFiles/opengl_common.dir/src/common/shader.cpp.obj -c /home/green/openGL/proj/src/common/shader.cpp",
+  "file": "/home/green/openGL/proj/src/common/shader.cpp",
+  "output": "CMakeFiles/opengl_common.dir/src/common/shader.cpp.obj"
+},
+{
+  "directory": "/home/green/openGL/proj/build-w64-release",
+  "command": "/usr/bin/x86_64-w64-mingw32-g++  @CMakeFiles/texture-ex-input.dir/includes_CXX.rsp -Os -DNDEBUG -std=gnu++20 -o CMakeFiles/texture-ex-input.dir/src/texture-ex-input.cpp.obj -c /home/green/openGL/proj/src/texture-ex-input.cpp",
+  "file": "/home/green/openGL/proj/src/texture-ex-input.cpp",
+  "output": "CMakeFiles/texture-ex-input.dir/src/texture-ex-input.cpp.obj"
+}
+]

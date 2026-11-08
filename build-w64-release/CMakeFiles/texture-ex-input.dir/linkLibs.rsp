@@ -1,0 +1,1 @@
+ libopengl_common.a "/home/green/openGL/GLFW/build-w64/src/libglfw3.a" "/home/green/openGL/proj/third-party/spdlog/build-w64/libspdlog.a" -lopengl32 -lgdi32 -luser32 -lshell32 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

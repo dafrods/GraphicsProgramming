@@ -12,7 +12,7 @@
             "CMAKE_BUILD_TYPE": "Debug"
       }
     },
-        {
+    {
       "name": "default-linux",
       "displayName": "Default Build",
       "description": "Default Build Preset",
@@ -20,6 +20,17 @@
       "cacheVariables": {
             "CMAKE_CXX_STANDARD":"20",
             "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "default-w64-release",
+      "displayName": "Default Build",
+      "description": "Default Build Preset",
+      "binaryDir": "${sourceDir}/build-w64-release",
+      "cacheVariables": {
+            "CMAKE_CXX_STANDARD":"20",
+            "CMAKE_TOOLCHAIN_FILE":"/home/green/toolchains/mingw-w64.cmake",
+            "CMAKE_BUILD_TYPE": "MinSizeRel"
       }
     }
   ]

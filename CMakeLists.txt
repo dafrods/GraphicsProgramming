@@ -31,6 +31,7 @@ if(WIN32)
 target_link_libraries(opengl_common PUBLIC
     $ENV{HOME}/openGL/GLFW/build-w64/src/libglfw3.a
     $ENV{HOME}/openGL/proj/third-party/spdlog/build-w64/libspdlog.a 
+    $ENV{HOME}/openGL/proj/third-party/glm/build-w64/glm/libglm.a
     opengl32
     gdi32
     user32
@@ -40,6 +41,7 @@ elseif(LINUX)
 target_link_libraries(opengl_common PUBLIC
     $ENV{HOME}/openGL/GLFW/build-linux/src/libglfw3.a
     $ENV{HOME}/openGL/proj/third-party/spdlog/build/libspdlog.a 
+    $ENV{HOME}/openGL/proj/third-party/glm/build/glm/libglm.a
     GL
 )
 endif()
@@ -62,7 +64,9 @@ endfunction()
 
 # add_gl_program(input_test src/input.cpp)
 # add_gl_program(texture src/texture.cpp)
-add_gl_program(texture-extend src/texture-extend.cpp)
+# add_gl_program(texture-extend src/texture-extend.cpp)
+# add_gl_program(texture-ex-texfil src/texture-ex-texfil.cpp)
+add_gl_program(texture-ex-input src/texture-ex-input.cpp)
 # add_gl_program(texture_opengl src/texture_opengl.cpp)
 # add_gl_program(shader_template src/shader_ex1.cpp)
 # add_gl_program(shader_template2 src/shader_ex2.cpp)
