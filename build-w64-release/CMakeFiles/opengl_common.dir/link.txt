@@ -1,2 +1,0 @@
-/usr/bin/x86_64-w64-mingw32-ar qc libopengl_common.a CMakeFiles/opengl_common.dir/src/common/glad.c.obj CMakeFiles/opengl_common.dir/src/common/opengl_util.cpp.obj CMakeFiles/opengl_common.dir/src/common/logger.cpp.obj CMakeFiles/opengl_common.dir/src/common/shader.cpp.obj
-/usr/bin/x86_64-w64-mingw32-ranlib libopengl_common.a

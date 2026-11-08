@@ -1,4 +1,0 @@
-/home/green/openGL/proj/build-w64-release/CMakeFiles/opengl_common.dir
-/home/green/openGL/proj/build-w64-release/CMakeFiles/texture-ex-input.dir
-/home/green/openGL/proj/build-w64-release/CMakeFiles/edit_cache.dir
-/home/green/openGL/proj/build-w64-release/CMakeFiles/rebuild_cache.dir

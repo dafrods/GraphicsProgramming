@@ -1,6 +1,8 @@
-build-w64
 build
+build-linux
+build-w64-release
 third-party
 .cache
 .vscode
 .clangd
+include-old

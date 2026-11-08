@@ -8,6 +8,10 @@ project(opengl LANGUAGES C CXX)
 # Need atleast a graphics driver eg Mesa
 # OpenGL 3.3 or higher
 
+# Third party Libraries
+add_subdirectory(third-party/glfw)
+add_subdirectory(third-party/glm)
+add_subdirectory(third-party/spdlog)
 
 
 # Removes mingw-w64 dll dependency for windows builds
@@ -27,11 +31,17 @@ target_include_directories(opengl_common PUBLIC
     $ENV{HOME}/openGL/GLFW/include
 )
 
+target_link_libraries(opengl_common PUBLIC
+    glfw
+    spdlog::spdlog
+    glm::glm
+)
+
 if(WIN32)
 target_link_libraries(opengl_common PUBLIC
-    $ENV{HOME}/openGL/GLFW/build-w64/src/libglfw3.a
-    $ENV{HOME}/openGL/proj/third-party/spdlog/build-w64/libspdlog.a 
-    $ENV{HOME}/openGL/proj/third-party/glm/build-w64/glm/libglm.a
+    # $ENV{HOME}/openGL/GLFW/build-w64/src/libglfw3.a
+    # $ENV{HOME}/openGL/proj/third-party/spdlog/build-w64/libspdlog.a 
+    # $ENV{HOME}/openGL/proj/third-party/glm/build-w64/glm/libglm.a
     opengl32
     gdi32
     user32
@@ -39,9 +49,9 @@ target_link_libraries(opengl_common PUBLIC
 )
 elseif(LINUX)
 target_link_libraries(opengl_common PUBLIC
-    $ENV{HOME}/openGL/GLFW/build-linux/src/libglfw3.a
-    $ENV{HOME}/openGL/proj/third-party/spdlog/build/libspdlog.a 
-    $ENV{HOME}/openGL/proj/third-party/glm/build/glm/libglm.a
+    # $ENV{HOME}/openGL/GLFW/build-linux/src/libglfw3.a
+    # $ENV{HOME}/openGL/proj/third-party/spdlog/build/libspdlog.a 
+    # $ENV{HOME}/openGL/proj/third-party/glm/build/glm/libglm.a
     GL
 )
 endif()

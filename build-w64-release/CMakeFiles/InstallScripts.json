@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/green/openGL/proj/build-w64-release/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
