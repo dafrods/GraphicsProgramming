@@ -9,6 +9,8 @@ project(opengl LANGUAGES C CXX)
 # Need atleast a graphics driver eg Mesa
 # OpenGL 3.3 or higher
 
+# option(WIN32_CONSOLE "Builds executable to be used in console for Windows" OFF)
+
 # Third party Libraries
 add_subdirectory(third-party/glfw)
 add_subdirectory(third-party/glm)
@@ -61,13 +63,18 @@ function(add_gl_program TARGET SOURCE)
         set(WIN32_CONSOLE OFF)
     endif()
 
-    message("-- [debug] WIN32_CONSOLE: ${WIN32_CONSOLE}")
+    # message("-- [debug] WIN32_CONSOLE: ${WIN32_CONSOLE}")
+    message("-- [debug] SOURCE: ${SOURCE}")
 
     if(WIN32)
         if(WIN32_CONSOLE)
             message("-- [info] Target Win32 Console App")
             add_executable(${TARGET}
             ${SOURCE}
+            )
+
+            set_target_properties(${TARGET} PROPERTIES
+            RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/console"
             )
         else()
             message("-- [info] Target Win32 GUI App")
@@ -92,28 +99,58 @@ function(create_executable TARGET TYPE)
         add_gl_program(${TARGET} "src/exercises/${TARGET}.cpp")
     elseif(${TYPE} STREQUAL EXAMPLE)
         add_gl_program(${TARGET} "src/${TARGET}.cpp")
+    elseif(${TYPE} STREQUAL CONSOLE)
+        add_gl_program(${TARGET} "src/console/${TARGET}.cpp" ON)
     endif()
 endfunction()
 
-# add_gl_program(matrixops src/console/matrixops.cpp ON)
-# add_gl_program(linalg src/linalg.cpp)
-# add_gl_program(input_test src/input.cpp)
-# add_gl_program(texture src/texture.cpp)
-# add_gl_program(texture-extend src/texture-extend.cpp)
-# add_gl_program(texture-ex-texfil src/texture-ex-texfil.cpp)
-# add_gl_program(texture-ex-input src/texture-ex-input.cpp)
-# add_gl_program(texture_opengl src/texture_opengl.cpp)
-# add_gl_program(shader_template src/shader_ex1.cpp)
-# add_gl_program(shader_template2 src/shader_ex2.cpp)
-
-# file(GLOB SOURCEFILES src/*.cpp)
-
-# foreach(file in ${SOURCEFILES})
-# message("${file}")
-# endforeach()
-
 # *********************************************************
-# Excercises
-# *********************************************************
+# Programs
+# ********************************************************* 
 
-create_executable(linalg-ex2 EXERCISE)
+# Expects C++ source files
+
+set(Exercise
+    texture-ex-input
+    texture-ex-texfil
+    shader_ex2
+    ex3
+    ex
+    ex3alt
+    ex2
+    shader_ex1
+)
+
+set(Example
+    triangle
+    linalg
+    hellowindows
+    texture_opengl
+    square
+    input
+    texture
+    texture-extend
+    hello_windows
+    shader_pulse
+    shader_tricolor
+)
+
+set(Console
+    main
+    matrixops
+)
+
+foreach(EXE IN LISTS Exercise)
+    create_executable(${EXE} EXERCISE)
+endforeach()
+
+foreach(EXE IN LISTS Example)
+    create_executable(${EXE} EXAMPLE)
+endforeach()
+
+foreach(EXE IN LISTS Console)
+    create_executable(${EXE} CONSOLE)
+endforeach()
+
+file(COPY ${CMAKE_SOURCE_DIR}/assets
+     DESTINATION ${CMAKE_BINARY_DIR})
