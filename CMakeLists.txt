@@ -133,6 +133,7 @@ set(Example
     hello_windows
     shader_pulse
     shader_tricolor
+    coordinate
 )
 
 set(Console

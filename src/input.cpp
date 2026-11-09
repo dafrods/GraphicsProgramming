@@ -12,12 +12,12 @@ const unsigned int SCR_HEIGHT = 600;
 // ************************************************************************************************
 //  Input Logic
 // ************************************************************************************************
-    const GLubyte GL_ALPHA_START = 65;
-    const GLubyte GL_ALPHA_END   = 90;
+const GLubyte GL_ALPHA_START = 65;
+const GLubyte GL_ALPHA_END   = 90;
 
-    const GLubyte ASCII_DIFF_LOWERCASE = 32;
+const GLubyte ASCII_DIFF_LOWERCASE = 32;
 
-    void yprocessInput(GLFWwindow *window);
+void yprocessInput(GLFWwindow *window);
 // ************************************************************************************************
 int main()
 {
