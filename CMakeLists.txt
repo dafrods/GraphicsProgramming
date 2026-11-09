@@ -11,11 +11,26 @@ project(opengl LANGUAGES C CXX)
 
 # option(WIN32_CONSOLE "Builds executable to be used in console for Windows" OFF)
 
+# ************************************************************************
 # Third party Libraries
+# ************************************************************************
+
+# Manually Installed
 add_subdirectory(third-party/glfw)
 add_subdirectory(third-party/glm)
 add_subdirectory(third-party/spdlog)
 
+
+# ************************************************************************
+
+# Source - https://stackoverflow.com/a/65133324
+# Posted by tdashroy, modified by community. See post 'Timeline' for change history
+# Retrieved 2026-11-09, License - CC BY-SA 4.0
+
+add_custom_target(copy_assets
+    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_LIST_DIR}/copy_assets.cmake
+)
+# add_dependencies(mytarget copy_assets)
 
 # Removes mingw-w64 dll dependency for windows builds
 if(WIN32)
@@ -91,6 +106,8 @@ function(add_gl_program TARGET SOURCE)
     endif()
 
     target_link_libraries(${TARGET} PRIVATE opengl_common)
+    add_dependencies(${TARGET} copy_assets)
+
 endfunction()
 
 # Convenience Function for the project
@@ -110,6 +127,7 @@ endfunction()
 
 # Expects C++ source files
 
+# Add files from the exercise folder
 set(Exercise
     texture-ex-input
     texture-ex-texfil
@@ -119,8 +137,12 @@ set(Exercise
     ex3alt
     ex2
     shader_ex1
+    coordinate-ex1
+    coordinate-ex2
+    coordinate-ex3
 )
 
+# Add source files from the root src dir
 set(Example
     triangle
     linalg
@@ -134,8 +156,11 @@ set(Example
     shader_pulse
     shader_tricolor
     coordinate
+    coordinate-extend
+    coordinate-extended
 )
 
+# Add source files from the console folder
 set(Console
     main
     matrixops
@@ -153,5 +178,7 @@ foreach(EXE IN LISTS Console)
     create_executable(${EXE} CONSOLE)
 endforeach()
 
-file(COPY ${CMAKE_SOURCE_DIR}/assets
-     DESTINATION ${CMAKE_BINARY_DIR})
+# file(COPY ${CMAKE_SOURCE_DIR}/assets
+#      DESTINATION ${CMAKE_BINARY_DIR})
+
+
