@@ -86,6 +86,7 @@ function(add_gl_program TARGET SOURCE)
     target_link_libraries(${TARGET} PRIVATE opengl_common)
 endfunction()
 
+# Convenience Function for the project
 function(create_executable TARGET TYPE)
     if(${TYPE} STREQUAL EXERCISE)
         add_gl_program(${TARGET} "src/exercises/${TARGET}.cpp")
