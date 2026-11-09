@@ -86,8 +86,16 @@ function(add_gl_program TARGET SOURCE)
     target_link_libraries(${TARGET} PRIVATE opengl_common)
 endfunction()
 
+function(create_executable TARGET TYPE)
+    if(${TYPE} STREQUAL EXERCISE)
+        add_gl_program(${TARGET} "src/exercises/${TARGET}.cpp")
+    elseif(${TYPE} STREQUAL EXAMPLE)
+        add_gl_program(${TARGET} "src/${TARGET}.cpp")
+    endif()
+endfunction()
+
 # add_gl_program(matrixops src/console/matrixops.cpp ON)
-add_gl_program(linalg src/linalg.cpp)
+# add_gl_program(linalg src/linalg.cpp)
 # add_gl_program(input_test src/input.cpp)
 # add_gl_program(texture src/texture.cpp)
 # add_gl_program(texture-extend src/texture-extend.cpp)
@@ -102,3 +110,9 @@ add_gl_program(linalg src/linalg.cpp)
 # foreach(file in ${SOURCEFILES})
 # message("${file}")
 # endforeach()
+
+# *********************************************************
+# Excercises
+# *********************************************************
+
+create_executable(linalg-ex2 EXERCISE)

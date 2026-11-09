@@ -215,6 +215,7 @@ int main()
 // ************************************************************************************************
 
     glm::mat4 trans = glm::mat4(1.0f);
+    glm::mat4 trans1 = glm::mat4(1.0f);
     trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0)); // Rotate 90 by the Z - axis 
     trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5)); // Scale 
 
@@ -242,12 +243,16 @@ int main()
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glm::mat4 trans = glm::mat4(1.0f);
-        trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
+        // trans1 = glm::mat4(1.0f);
+        // trans1 = glm::translate(trans1, glm::vec3(0.5f, -0.5f, 0.0f));
+        // trans1 = glm::rotate(trans1, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+
+        trans = glm::mat4(1.0f);
         trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+        trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
 
         glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
-        
+
         // bind textures on corresponding texture units
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, texture1);
