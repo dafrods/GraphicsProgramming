@@ -17,7 +17,7 @@ const unsigned int SCR_HEIGHT = 600;
 //  Local Function Declarations
 // ************************************************************************************************
 
-void processInput_local(GLFWwindow *window, GLfloat &interpol);
+void processInputLocal(GLFWwindow*, GLfloat&);
 
 
 // ************************************************************************************************
@@ -237,7 +237,7 @@ int main()
 
     while (!glfwWindowShouldClose(window))
     {
-        processInput_local(window, interpol);
+        processInputLocal(window, interpol);
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
@@ -270,7 +270,7 @@ int main()
     return 0;
 }
 
-void processInput_local(GLFWwindow *window, GLfloat &interpol)
+void processInputLocal(GLFWwindow *window, GLfloat &interpol)
 {
     // Save the previous state
     static bool keyStates[GLFW_KEY_LAST + 1] = {};
