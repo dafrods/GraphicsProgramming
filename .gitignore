@@ -6,3 +6,4 @@ include-old
 .cache
 .vscode
 .clangd
+venv

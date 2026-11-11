@@ -30,7 +30,6 @@ add_subdirectory(third-party/spdlog)
 add_custom_target(copy_assets
     COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_LIST_DIR}/copy_assets.cmake
 )
-# add_dependencies(mytarget copy_assets)
 
 # Removes mingw-w64 dll dependency for windows builds
 if(WIN32)
@@ -42,6 +41,7 @@ add_library(opengl_common STATIC
         src/common/opengl_util.cpp
         src/common/logger.cpp
         src/common/shader.cpp
+        # src/common/camera.cpp
 )
 
 target_include_directories(opengl_common PUBLIC
@@ -158,6 +158,9 @@ set(Example
     coordinate
     coordinate-extend
     coordinate-extended
+    camera
+    camera-extend
+    camera-extended
 )
 
 # Add source files from the console folder
@@ -178,7 +181,5 @@ foreach(EXE IN LISTS Console)
     create_executable(${EXE} CONSOLE)
 endforeach()
 
-# file(COPY ${CMAKE_SOURCE_DIR}/assets
-#      DESTINATION ${CMAKE_BINARY_DIR})
 
 
