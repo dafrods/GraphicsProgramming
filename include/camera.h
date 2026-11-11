@@ -6,8 +6,6 @@
 #include <GLFW/glfw3.h>
 #include <glm/gtc/matrix_transform.hpp>
 
-#include <spdlog/spdlog.h>
-
 class Camera
 {
     
@@ -55,101 +53,23 @@ class Camera
 
 
     public:
-    Camera() = default;
+    Camera();
 
-    static void mouseCallback(GLFWwindow* window, double xpos, double ypos)
-    {
-        auto* self = static_cast<Camera*>(glfwGetWindowUserPointer(window));
-        if(self)
-            self->processMouseCallback(xpos, ypos);
-    }
+    static void mouseCallback(GLFWwindow* window, double xpos, double ypos);
 
-    static void scrollCallback(GLFWwindow* window, double xoffset, double yoffset)
-    {
-        auto* self = static_cast<Camera*>(glfwGetWindowUserPointer(window));
-        if(self)
-            self->processScrollCallback(xoffset, yoffset);
-    }
+    static void scrollCallback(GLFWwindow* window, double xoffset, double yoffset);
 
-    void processMouseCallback(double xpos, double ypos)
-    {
-        xpos = static_cast<GLfloat>(xpos);
-        ypos = static_cast<GLfloat>(ypos);
-
-        if (firstMouse)
-        {
-            lastX = xpos;
-            lastY = ypos;
-            firstMouse = false;
-        }
+    void processMouseCallback(double xpos, double ypos);
     
-        GLfloat xoffset = xpos - lastX;
-        GLfloat yoffset = lastY - ypos; 
-        lastX = xpos;
-        lastY = ypos;
+    void processScrollCallback(double xoffset, double yoffset);
 
-        GLfloat sensitivity = baseSensitivity;
-        xoffset *= sensitivity;
-        yoffset *= sensitivity;
+    void updateView();
 
-        yaw   += xoffset;
-        pitch += yoffset;
+    void processInput(GLFWwindow* window);
 
-        // Restrict Pitch
-        if(pitch > 89.0f)
-            pitch = 89.0f;
-        if(pitch < -89.0f)
-            pitch = -89.0f;
+    void updateDelta();
 
-        glm::vec3 direction;
-        
-        direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-        direction.y = sin(glm::radians(pitch));
-        direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-        cameraFront = glm::normalize(direction);
-    }
+    void updateUniform(Shader& shader);
 
-    void processScrollCallback(double xoffset, double yoffset)
-    {
-        xoffset = static_cast<GLfloat>(xoffset);
-        yoffset = static_cast<GLfloat>(yoffset);
-
-        fov -= yoffset;
-        if (fov < 1.0f)
-            fov = 1.0f;
-        if (fov > 45.0f)
-            fov = 45.0f; 
-    }
-
-    void updateView()
-    {
-        view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
-    }
-
-    void processInput(GLFWwindow* window)
-    {
-        GLfloat cameraSpeed = baseCameraSpeed * deltaTime;
-
-        if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-            cameraPos += cameraSpeed * cameraFront;
-        if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-            cameraPos -= cameraSpeed * cameraFront;
-        if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-            cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-        if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-            cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-    }
-
-    void updateDelta()
-    {
-        GLfloat currentFrame = glfwGetTime();
-        deltaTime = currentFrame - lastFrame;
-        lastFrame = currentFrame;  
-    }
-
-    void updateUniform(Shader& shader)
-    {
-        shader.setMat4("view", view);
-    }
 
 };

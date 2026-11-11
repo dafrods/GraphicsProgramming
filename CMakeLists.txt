@@ -41,12 +41,11 @@ add_library(opengl_common STATIC
         src/common/opengl_util.cpp
         src/common/logger.cpp
         src/common/shader.cpp
-        # src/common/camera.cpp
+        src/common/camera.cpp
 )
 
 target_include_directories(opengl_common PUBLIC
     include
-    $ENV{HOME}/openGL/GLFW/include
 )
 
 target_link_libraries(opengl_common PUBLIC
