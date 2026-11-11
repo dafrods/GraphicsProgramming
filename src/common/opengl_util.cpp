@@ -1,9 +1,18 @@
-#include <GLFW/glfw3.h>
+#include <opengl_util.h>
 
 void processInput(GLFWwindow *window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
+}
+
+void processInput(GLFWwindow *window, Camera &camera)
+{
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+
+    camera.processInput(window);
+
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes

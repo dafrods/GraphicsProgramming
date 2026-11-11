@@ -6,40 +6,76 @@
 #include <GLFW/glfw3.h>
 #include <glm/gtc/matrix_transform.hpp>
 
+#include <spdlog/spdlog.h>
 
 class Camera
 {
-    public:
-    const GLfloat baseCameraSpeed = 2.5f;
+    
+    // ------------------------------------------
+    // Camera Constants
+    // ------------------------------------------
+
+    // ------------------------------------------
+    // Camera Settings    
+    // ------------------------------------------
+    
+    // Projection settings
+    GLfloat camZPos = -3.0;
+
+    GLfloat fov = 45.0;
+    GLfloat aspect_ratio = 4.0/3.0;
+
+    GLfloat nearClip = 0.1;
+    GLfloat farClip = 100.0;
+
+    GLfloat baseCameraSpeed = 2.5f;
+    GLfloat baseSensitivity = 0.1f;
+
+    // ------------------------------------------
+    // Camera States
+    // ------------------------------------------
 
     GLfloat deltaTime = 0.0;
     GLfloat lastFrame = 0.0;
 
+    // View State
+    glm::mat4 view, projection;
+    
     glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
     glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
     glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f);
 
-    glm::mat4 view;
-
-    // GLfloat roll;
     GLfloat pitch;
     GLfloat yaw = -90.0;
-
+    
+    // Mouse State
+    GLboolean firstMouse = true;
     GLfloat lastX = 0;
     GLfloat lastY = 0;
-    GLboolean firstMouse = true;
 
+
+    public:
     Camera() = default;
-    
-    // void updateViewAngle(GLfloat roll , GLfloat pitch, GLfloat yaw = -90.0)
-    // {
-    //     direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-    //     direction.y = sin(glm::radians(pitch));
-    //     direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-    // }
 
-    void mouseCallback(GLFWwindow* window, double xpos, double ypos)
+    static void mouseCallback(GLFWwindow* window, double xpos, double ypos)
     {
+        auto* self = static_cast<Camera*>(glfwGetWindowUserPointer(window));
+        if(self)
+            self->processMouseCallback(xpos, ypos);
+    }
+
+    static void scrollCallback(GLFWwindow* window, double xoffset, double yoffset)
+    {
+        auto* self = static_cast<Camera*>(glfwGetWindowUserPointer(window));
+        if(self)
+            self->processScrollCallback(xoffset, yoffset);
+    }
+
+    void processMouseCallback(double xpos, double ypos)
+    {
+        xpos = static_cast<GLfloat>(xpos);
+        ypos = static_cast<GLfloat>(ypos);
+
         if (firstMouse)
         {
             lastX = xpos;
@@ -52,13 +88,14 @@ class Camera
         lastX = xpos;
         lastY = ypos;
 
-        GLfloat sensitivity = 0.1f;
+        GLfloat sensitivity = baseSensitivity;
         xoffset *= sensitivity;
         yoffset *= sensitivity;
 
         yaw   += xoffset;
         pitch += yoffset;
 
+        // Restrict Pitch
         if(pitch > 89.0f)
             pitch = 89.0f;
         if(pitch < -89.0f)
@@ -70,6 +107,18 @@ class Camera
         direction.y = sin(glm::radians(pitch));
         direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
         cameraFront = glm::normalize(direction);
+    }
+
+    void processScrollCallback(double xoffset, double yoffset)
+    {
+        xoffset = static_cast<GLfloat>(xoffset);
+        yoffset = static_cast<GLfloat>(yoffset);
+
+        fov -= yoffset;
+        if (fov < 1.0f)
+            fov = 1.0f;
+        if (fov > 45.0f)
+            fov = 45.0f; 
     }
 
     void updateView()

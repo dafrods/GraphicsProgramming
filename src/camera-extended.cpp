@@ -14,8 +14,6 @@
 #include <shader.h>
 #include <camera.h>
 
-#include <functional>
-
 #define STB_IMAGE_IMPLEMENTATION // This line should be defined in one source file only
 #include <stb_image.h>
 
@@ -34,10 +32,16 @@ const std::string fshaderPath = std::format("assets/shaders/{}.frag", FILENAME);
 const char* texturePath1 = "assets/textures/container.jpg";
 const char* texturePath2 = "assets/textures/awesomeface.png";
 
+
+
 // ************************************************************************************************
 
 int main()
 {
+
+    // ----------------------------------------------------
+    //  Init
+    // ----------------------------------------------------
     loggerInit();
 
     // glfw: initialize and configure
@@ -66,23 +70,42 @@ int main()
         glfwTerminate();
         return -1;
     }
-    glfwMakeContextCurrent(window);
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-
-    // glad: load all OpenGL function pointers
-    // ---------------------------------------
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-        spdlog::error("Failed to initialize GLAD");
-        return -1;
-    }
 
 // ************************************************************************************************
 //  Object Initialization
 // ************************************************************************************************
 
+Camera camera{};
+
+// ----------------------------------------------------
+//  glfw window contexts
+// ----------------------------------------------------
+
+glfwMakeContextCurrent(window);
+glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
+// set Passthrough
+glfwSetWindowUserPointer(window, &camera);
+
+// input callbacks
+glfwSetCursorPosCallback(window, camera.mouseCallback);
+glfwSetScrollCallback(window, camera.scrollCallback);
+
+// Mouse Capture
+glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
+// glad: load all OpenGL function pointers
+// ---------------------------------------
+if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+{
+    spdlog::error("Failed to initialize GLAD");
+    return -1;
+}
+
+    // Enable Z-buffer
+    glEnable(GL_DEPTH_TEST); 
+    
     Shader shader{vshaderPath.c_str(), fshaderPath.c_str()};
-    Camera camera{};
 
 // ************************************************************************************************
 //  Vertex Handling
@@ -132,18 +155,25 @@ int main()
         -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
     };
 
-     unsigned int indices[] = {  
-        0, 1, 3, // first triangle
-        1, 2, 3  // second triangle
+    glm::vec3 cubePositions[] = {
+    glm::vec3( 0.0f,  0.0f,  0.0f), 
+    glm::vec3( 2.0f,  5.0f, -15.0f), 
+    glm::vec3(-1.5f, -2.2f, -2.5f),  
+    glm::vec3(-3.8f, -2.0f, -12.3f),  
+    glm::vec3( 2.4f, -0.4f, -3.5f),  
+    glm::vec3(-1.7f,  3.0f, -7.5f),  
+    glm::vec3( 1.3f, -2.0f, -2.5f),  
+    glm::vec3( 1.5f,  2.0f, -2.5f), 
+    glm::vec3( 1.5f,  0.2f, -1.5f), 
+    glm::vec3(-1.3f,  1.0f, -1.5f)  
     };
 
     // Handlers
-    unsigned int VBO, VAO, EBO;
+    unsigned int VBO, VAO;
 
     // Generate Handlers
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
-    glGenBuffers(1, &EBO);
 
     // Bind and Send Data to Buffers
     glBindVertexArray(VAO);
@@ -151,16 +181,9 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
     // Position attribute
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-
-    // // Color attribute
-    // glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
-    // glEnableVertexAttribArray(1);
 
     // Texture Coordinate attribute
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
@@ -170,12 +193,6 @@ int main()
 // ************************************************************************************************
 // Texture
 // ************************************************************************************************
-
-    float texCoords[] = {
-        0.0f, 0.0f,  // lower-left corner  
-        1.0f, 0.0f,  // lower-right corner
-        0.5f, 1.0f   // top-center cornere
-    };
 
     // Texture Handler
     unsigned int texture1, texture2;
@@ -251,58 +268,6 @@ int main()
 
     stbi_image_free(data);
 
-
-// ************************************************************************************************
-//  Transforms
-// ************************************************************************************************
-
-    glm::mat4 trans = glm::mat4(1.0f);
-    glm::mat4 trans1 = glm::mat4(1.0f);
-    trans = glm::rotate(trans, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0)); // Rotate 90 by the Z - axis 
-    trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5)); // Scale 
-
-
-// ************************************************************************************************
-//  3D Setup
-// ************************************************************************************************
-
-
-
-    // ----------------------------------------------------
-    // 3D Object
-    // ----------------------------------------------------
-
-    glm::mat4 model = glm::mat4(1.0f);
-    model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f)); 
-
-    glm::vec3 cubePositions[] = {
-    glm::vec3( 0.0f,  0.0f,  0.0f), 
-    glm::vec3( 2.0f,  5.0f, -15.0f), 
-    glm::vec3(-1.5f, -2.2f, -2.5f),  
-    glm::vec3(-3.8f, -2.0f, -12.3f),  
-    glm::vec3( 2.4f, -0.4f, -3.5f),  
-    glm::vec3(-1.7f,  3.0f, -7.5f),  
-    glm::vec3( 1.3f, -2.0f, -2.5f),  
-    glm::vec3( 1.5f,  2.0f, -2.5f), 
-    glm::vec3( 1.5f,  0.2f, -1.5f), 
-    glm::vec3(-1.3f,  1.0f, -1.5f)  
-    };
-
-    // ----------------------------------------------------
-    // Viewport
-    // ----------------------------------------------------
-
-    GLfloat camZPos = -3.0;
-
-    GLfloat fov = 45.0;
-    GLfloat aspect_ratio = 4.0/3.0;
-
-    GLfloat nearClip = 0.1;
-    GLfloat farClip = 100.0;
-
-    glm::mat4 projection;
-    projection = glm::perspective(glm::radians(fov), aspect_ratio, nearClip, farClip);
-
 // ************************************************************************************************
 //  Main Loop
 // ************************************************************************************************
@@ -314,27 +279,18 @@ int main()
     shader.setInt("texture1", 0);
     shader.setInt("texture2", 1);
 
-    shader.setMat4("projection", projection);
-
     while (!glfwWindowShouldClose(window))
     {
-        processInput(window);
+        processInput(window, camera);
 
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        // Activate Z-buffer
-        glEnable(GL_DEPTH_TEST); 
-        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
-        camera.processInput(window);
+
         camera.updateDelta();
-
-        glfwSetCursorPosCallback(window, [&camera](GLFWwindow* window, double xpos, double ypos){camera.mouseCallback(window,xpos,ypos);}); 
-
         camera.updateView();
         camera.updateUniform(shader);
-
 
         // bind textures on corresponding texture units
         glActiveTexture(GL_TEXTURE0);
