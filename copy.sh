@@ -1,7 +1,7 @@
 DEST="$PROJECTS/openGL/dump/"
 
 # cp $HOME/openGL/proj/build/*.exe $DEST
-sudo rsync $HOME/openGL/proj/build $DEST -a
+sudo rsync $HOME/openGL/proj/build $DEST -a --delete
 
 if [ -e $DEST ]; then
     echo "COPY OK"

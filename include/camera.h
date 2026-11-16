@@ -6,6 +6,10 @@
 #include <GLFW/glfw3.h>
 #include <glm/gtc/matrix_transform.hpp>
 
+// CAMERA MOVEMENT MODE
+#define FREECAM 1
+#define FPSCAM 2
+
 class Camera
 {
     
@@ -17,6 +21,9 @@ class Camera
     // Camera Settings    
     // ------------------------------------------
     
+    // Camera Mode
+    GLint mode; // OPTIONS: [1] - FREECAM; [2] - FPSCAM
+
     // Projection settings
     GLfloat camZPos = -3.0;
 
@@ -29,6 +36,8 @@ class Camera
     GLfloat baseCameraSpeed = 2.5f;
     GLfloat baseSensitivity = 0.1f;
 
+    GLfloat speedFactor = 0.0;
+
     // ------------------------------------------
     // Camera States
     // ------------------------------------------
@@ -40,7 +49,7 @@ class Camera
     glm::mat4 view, projection;
     
     glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  3.0f);
-    glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+    glm::vec3 cameraFront = glm::vec3(3.0f, 0.0f, -1.0f);
     glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f);
 
     GLfloat pitch;
@@ -54,6 +63,7 @@ class Camera
 
     public:
     Camera();
+    Camera(GLint);
 
     static void mouseCallback(GLFWwindow* window, double xpos, double ypos);
 
@@ -65,11 +75,14 @@ class Camera
 
     void updateView();
 
+    void updateViewUserImpl();
+
     void processInput(GLFWwindow* window);
 
     void updateDelta();
 
     void updateUniform(Shader& shader);
 
+    void setCameraSpeed(GLfloat);
 
 };

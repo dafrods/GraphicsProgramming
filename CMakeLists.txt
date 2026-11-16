@@ -20,6 +20,8 @@ add_subdirectory(third-party/glfw)
 add_subdirectory(third-party/glm)
 add_subdirectory(third-party/spdlog)
 
+find_package(OpenGL REQUIRED)
+find_package(nlohmann_json 3.12.0 REQUIRED)
 
 # ************************************************************************
 
@@ -36,22 +38,30 @@ if(WIN32)
     set(CMAKE_EXE_LINKER_FLAGS "-static")
 endif()
 
+# ***************************************************************************************
+#   OpenGL
+# ***************************************************************************************
+
 add_library(opengl_common STATIC
         src/common/glad.c
-        src/common/opengl_util.cpp
-        src/common/logger.cpp
-        src/common/shader.cpp
-        src/common/camera.cpp
+)
+
+set_target_properties(opengl_common PROPERTIES
+    LINKER_LANGUAGE CXX
 )
 
 target_include_directories(opengl_common PUBLIC
     include
+    "${VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/include"
 )
+
+message("${VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/include")
 
 target_link_libraries(opengl_common PUBLIC
     glfw
     spdlog
     glm
+    nlohmann_json::nlohmann_json
 )
 
 # Needed by GLAD
@@ -62,12 +72,48 @@ target_link_libraries(opengl_common PRIVATE
     gdi32
     user32
     shell32
+    OpenGL::GL
 )
 elseif(UNIX)
 target_link_libraries(opengl_common PRIVATE
     GL
 )
 endif()
+
+# ***************************************************************************************
+#   Subsystems
+# ***************************************************************************************
+
+add_library(subsystem STATIC 
+    src/modules/shader.cpp
+    src/modules/camera.cpp
+    src/modules/logger.cpp
+)
+
+target_include_directories(subsystem PRIVATE
+    include
+)
+
+target_link_libraries(subsystem PRIVATE
+    opengl_common
+)
+
+add_library(helper STATIC
+    src/helpers/opengl_util.cpp
+)
+
+target_include_directories(helper PRIVATE
+    include
+)
+
+target_link_libraries(helper PRIVATE
+    subsystem
+    opengl_common
+)
+
+# ***************************************************************************************
+#   Functions
+# ***************************************************************************************
 
 # Common function for OpenGL executables
 function(add_gl_program TARGET SOURCE)
@@ -78,11 +124,11 @@ function(add_gl_program TARGET SOURCE)
     endif()
 
     # message("-- [debug] WIN32_CONSOLE: ${WIN32_CONSOLE}")
-    message("-- [debug] SOURCE: ${SOURCE}")
+    # message("-- [debug] SOURCE: ${SOURCE}")
 
     if(WIN32)
         if(WIN32_CONSOLE)
-            message("-- [info] Target Win32 Console App")
+            message("-- [debug] Target Win32 Console App")
             add_executable(${TARGET}
             ${SOURCE}
             )
@@ -91,20 +137,25 @@ function(add_gl_program TARGET SOURCE)
             RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/console"
             )
         else()
-            message("-- [info] Target Win32 GUI App")
+            message("-- [debug] Target Win32 GUI App")
 
             add_executable(${TARGET} WIN32
                 ${SOURCE}
             )
         endif()
     elseif(UNIX)
-        message("-- [info] Target UNIX App")
+        message("-- [debug] Target UNIX App")
         add_executable(${TARGET}
         ${SOURCE}
     )
     endif()
 
-    target_link_libraries(${TARGET} PRIVATE opengl_common)
+    target_link_libraries(${TARGET} PRIVATE 
+        opengl_common
+        subsystem
+        helper
+    )
+
     add_dependencies(${TARGET} copy_assets)
 
 endfunction()
@@ -139,6 +190,8 @@ set(Exercise
     coordinate-ex1
     coordinate-ex2
     coordinate-ex3
+    camera-ex1
+    camera-ex2
 )
 
 # Add source files from the root src dir
@@ -160,6 +213,8 @@ set(Example
     camera
     camera-extend
     camera-extended
+    lighting
+    lighting-extend
 )
 
 # Add source files from the console folder

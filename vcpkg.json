@@ -1,0 +1,6 @@
+{
+  "dependencies": [
+    "opengl-registry",
+    "nlohmann-json"
+  ]
+}

@@ -1,8 +1,17 @@
+#include "glm/matrix.hpp"
 #include <camera.h>
 
 #include <spdlog/spdlog.h>
 
+static glm::mat4 lookAt(const glm::vec3&, const glm::vec3&, const glm::vec3&);
+
 Camera::Camera()
+{
+    mode = FREECAM;
+    projection = glm::perspective(glm::radians(fov), aspect_ratio, nearClip, farClip);
+};
+
+Camera::Camera(GLint mode) : mode(mode)
 {
     projection = glm::perspective(glm::radians(fov), aspect_ratio, nearClip, farClip);
 };
@@ -59,6 +68,7 @@ void Camera::processMouseCallback(double xpos, double ypos)
     cameraFront = glm::normalize(direction);
 }
 
+
 void Camera::processScrollCallback(double xoffset, double yoffset)
 {
     xoffset = static_cast<GLfloat>(xoffset);
@@ -76,18 +86,26 @@ void Camera::updateView()
     view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 }
 
+void Camera::updateViewUserImpl()
+{   
+    view = lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+}
+
 void Camera::processInput(GLFWwindow* window)
 {
-    GLfloat cameraSpeed = baseCameraSpeed * deltaTime;
+    GLfloat cameraSpeed = baseCameraSpeed * deltaTime + (baseCameraSpeed * speedFactor);
+    glm::vec3 cameraNext = cameraFront;
+    if(mode == FPSCAM)
+        cameraNext = glm::normalize(glm::vec3(cameraFront.x, 0, cameraFront.z));
 
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-        cameraPos += cameraSpeed * cameraFront;
+        cameraPos += cameraSpeed * cameraNext;
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-        cameraPos -= cameraSpeed * cameraFront;
+        cameraPos -= cameraSpeed * cameraNext;
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-        cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+        cameraPos -= glm::normalize(glm::cross(cameraNext, cameraUp)) * cameraSpeed;
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-        cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+        cameraPos += glm::normalize(glm::cross(cameraNext, cameraUp)) * cameraSpeed;
 }
 
 void Camera::updateDelta()
@@ -102,3 +120,32 @@ void Camera::updateUniform(Shader& shader)
     shader.setMat4("projection", projection);
     shader.setMat4("view", view);
 }
+
+void Camera::setCameraSpeed(GLfloat speed)
+{
+    speedFactor = speed;
+}
+
+static glm::mat4 lookAt(const glm::vec3 &eye, const glm::vec3 &center, const glm::vec3 &up = glm::vec3(0.0,1.0,0.0))
+{
+    // Define Camera Direction
+    glm::vec3 direction = glm::normalize(center - eye); 
+
+    // Define camera right vector
+    glm ::vec3 right = glm::normalize(glm::cross(direction, up));
+    
+    // Define camera up
+    glm::vec3 camUp = glm::cross(right, direction);
+
+    
+    glm::mat4 view = glm::mat4{
+        glm::vec4(right, -glm::dot(right, eye)),
+        glm::vec4(camUp, -glm::dot(camUp, eye)),
+        glm::vec4(-direction,glm::dot(direction, eye)),
+        glm::vec4(0.0,0.0,0.0,1.0)
+    };
+
+    return glm::transpose(view);
+}
+
+

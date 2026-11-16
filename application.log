@@ -1,0 +1,186 @@
+[2026-11-12 21:15:44.074] [default] [info] Loading shader from assets/shaders/coordinate-extend.vert and assets/shaders/coordinate-extend.frag
+[2026-11-12 21:18:07.729] [default] [info] Loading shader from assets/shaders/coordinate-extend.vert and assets/shaders/coordinate-extend.frag
+[2026-11-12 21:52:25.949] [default] [info] Loading shader from assets/shaders/coordinate-extend.vert and assets/shaders/coordinate-extend.frag
+[2026-11-14 12:07:41.703] [default] [info] Loading shader from assets/shaders/coordinate-extend.vert and assets/shaders/coordinate-extend.frag
+[2026-11-14 12:07:44.509] [default] [info] Shader linking successful for assets/shaders/coordinate-extend.vert and assets/shaders/coordinate-extend.frag
+[2026-11-14 12:07:44.509] [default] [info] Shader program ID: 3
+[2026-11-16 11:38:21.600] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 11:38:21.703] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 11:38:21.703] [default] [info] Shader program ID: 3
+[2026-11-16 11:38:21.703] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 11:38:21.709] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 11:38:21.709] [default] [info] Shader program ID: 6
+[2026-11-16 11:39:40.492] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 11:39:40.493] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 11:39:40.493] [default] [info] Shader program ID: 3
+[2026-11-16 11:39:40.493] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 11:39:40.493] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 11:39:40.493] [default] [info] Shader program ID: 6
+[2026-11-16 11:39:53.761] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 11:39:53.762] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 11:39:53.762] [default] [info] Shader program ID: 3
+[2026-11-16 11:39:53.762] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 11:39:53.763] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 11:39:53.763] [default] [info] Shader program ID: 6
+[2026-11-16 11:45:19.309] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 11:45:19.310] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 11:45:19.310] [default] [info] Shader program ID: 3
+[2026-11-16 11:45:19.310] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 11:45:19.310] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 11:45:19.310] [default] [info] Shader program ID: 6
+[2026-11-16 11:45:45.446] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 11:45:45.447] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 11:45:45.447] [default] [info] Shader program ID: 3
+[2026-11-16 11:45:45.447] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 11:45:45.448] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 11:45:45.448] [default] [info] Shader program ID: 6
+[2026-11-16 12:19:36.986] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:19:36.987] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:19:36.987] [default] [info] Shader program ID: 3
+[2026-11-16 12:19:36.987] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:19:36.988] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:19:36.988] [default] [info] Shader program ID: 6
+[2026-11-16 12:24:10.629] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:24:10.630] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:24:10.630] [default] [info] Shader program ID: 3
+[2026-11-16 12:24:10.630] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:24:10.631] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:24:10.631] [default] [info] Shader program ID: 6
+[2026-11-16 12:24:52.351] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:24:52.352] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:24:52.352] [default] [info] Shader program ID: 3
+[2026-11-16 12:24:52.352] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:24:52.353] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:24:52.353] [default] [info] Shader program ID: 6
+[2026-11-16 12:24:59.216] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:24:59.218] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:24:59.218] [default] [info] Shader program ID: 3
+[2026-11-16 12:24:59.218] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:24:59.218] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:24:59.218] [default] [info] Shader program ID: 6
+[2026-11-16 12:26:36.741] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:26:36.742] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:26:36.742] [default] [info] Shader program ID: 3
+[2026-11-16 12:26:36.742] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:26:36.742] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:26:36.743] [default] [info] Shader program ID: 6
+[2026-11-16 12:29:35.979] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:29:35.980] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:29:35.980] [default] [info] Shader program ID: 3
+[2026-11-16 12:29:35.980] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:29:35.981] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:29:35.981] [default] [info] Shader program ID: 6
+[2026-11-16 12:30:05.830] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:30:05.831] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:30:05.831] [default] [info] Shader program ID: 3
+[2026-11-16 12:30:05.831] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:30:05.832] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:30:05.832] [default] [info] Shader program ID: 6
+[2026-11-16 12:30:28.522] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:30:28.524] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:30:28.524] [default] [info] Shader program ID: 3
+[2026-11-16 12:30:28.524] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:30:28.525] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:30:28.525] [default] [info] Shader program ID: 6
+[2026-11-16 12:35:09.356] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:35:09.358] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:35:09.358] [default] [info] Shader program ID: 3
+[2026-11-16 12:35:09.358] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:35:09.358] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:35:09.358] [default] [info] Shader program ID: 6
+[2026-11-16 12:35:44.146] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:35:44.148] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:35:44.148] [default] [info] Shader program ID: 3
+[2026-11-16 12:35:44.148] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:35:44.149] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:35:44.149] [default] [info] Shader program ID: 6
+[2026-11-16 12:36:49.787] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:36:49.789] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:36:49.789] [default] [info] Shader program ID: 3
+[2026-11-16 12:36:49.789] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:36:49.790] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:36:49.790] [default] [info] Shader program ID: 6
+[2026-11-16 12:37:09.487] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:37:09.488] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:37:09.488] [default] [info] Shader program ID: 3
+[2026-11-16 12:37:09.488] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:37:09.488] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:37:09.488] [default] [info] Shader program ID: 6
+[2026-11-16 12:40:29.382] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:40:29.384] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:40:29.384] [default] [info] Shader program ID: 3
+[2026-11-16 12:40:29.384] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:40:29.385] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:40:29.385] [default] [info] Shader program ID: 6
+[2026-11-16 12:54:52.034] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:54:52.035] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:54:52.035] [default] [info] Shader program ID: 3
+[2026-11-16 12:54:52.035] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:54:52.036] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:54:52.036] [default] [info] Shader program ID: 6
+[2026-11-16 12:56:28.580] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:56:28.581] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:56:28.581] [default] [info] Shader program ID: 3
+[2026-11-16 12:56:28.581] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:56:28.582] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:56:28.582] [default] [info] Shader program ID: 6
+[2026-11-16 12:57:00.188] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:57:00.189] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:57:00.189] [default] [info] Shader program ID: 3
+[2026-11-16 12:57:00.189] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:57:00.190] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:57:00.190] [default] [info] Shader program ID: 6
+[2026-11-16 12:59:17.245] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:59:17.246] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:59:17.246] [default] [info] Shader program ID: 3
+[2026-11-16 12:59:17.246] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:59:17.247] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:59:17.247] [default] [info] Shader program ID: 6
+[2026-11-16 12:59:55.080] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:59:55.081] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 12:59:55.081] [default] [info] Shader program ID: 3
+[2026-11-16 12:59:55.081] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:59:55.082] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 12:59:55.082] [default] [info] Shader program ID: 6
+[2026-11-16 13:01:14.658] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 13:01:14.660] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 13:01:14.660] [default] [info] Shader program ID: 3
+[2026-11-16 13:01:14.660] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 13:01:14.660] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 13:01:14.661] [default] [info] Shader program ID: 6
+[2026-11-16 13:02:36.392] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 13:02:36.393] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 13:02:36.393] [default] [info] Shader program ID: 3
+[2026-11-16 13:02:36.393] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 13:02:36.394] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 13:02:36.394] [default] [info] Shader program ID: 6
+[2026-11-16 13:03:13.260] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 13:03:13.261] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 13:03:13.261] [default] [info] Shader program ID: 3
+[2026-11-16 13:03:13.261] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 13:03:13.262] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 13:03:13.262] [default] [info] Shader program ID: 6
+[2026-11-16 13:04:23.693] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 13:04:23.694] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 13:04:23.694] [default] [info] Shader program ID: 3
+[2026-11-16 13:04:23.694] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 13:04:23.695] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 13:04:23.695] [default] [info] Shader program ID: 6
+[2026-11-16 13:06:04.112] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 13:06:04.114] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 13:06:04.114] [default] [info] Shader program ID: 3
+[2026-11-16 13:06:04.114] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 13:06:04.114] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 13:06:04.114] [default] [info] Shader program ID: 6
+[2026-11-16 13:07:24.399] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 13:07:24.400] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 13:07:24.400] [default] [info] Shader program ID: 3
+[2026-11-16 13:07:24.400] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 13:07:24.401] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 13:07:24.401] [default] [info] Shader program ID: 6
+[2026-11-16 15:21:54.603] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 15:21:54.636] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting.frag
+[2026-11-16 15:21:54.636] [default] [info] Shader program ID: 3
+[2026-11-16 15:21:54.636] [default] [info] Loading shader from assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 15:21:54.636] [default] [info] Shader linking successful for assets/shaders/lighting.vert and assets/shaders/lighting_Light.frag
+[2026-11-16 15:21:54.636] [default] [info] Shader program ID: 6

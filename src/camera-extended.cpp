@@ -1,5 +1,5 @@
 #include "glm/ext/matrix_transform.hpp"
-// #include <format>
+#include <format>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -17,6 +17,8 @@
 #define STB_IMAGE_IMPLEMENTATION // This line should be defined in one source file only
 #include <stb_image.h>
 
+#include <string>
+
 const GLuint SCR_WIDTH = 800;
 const GLuint SCR_HEIGHT = 600;
 
@@ -31,8 +33,6 @@ const std::string fshaderPath = std::format("assets/shaders/{}.frag", FILENAME);
 
 const char* texturePath1 = "assets/textures/container.jpg";
 const char* texturePath2 = "assets/textures/awesomeface.png";
-
-
 
 // ************************************************************************************************
 

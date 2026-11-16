@@ -294,6 +294,7 @@ int main()
     // view = glm::translate(view, glm::vec3(0.0f, 0.0f, camZPos));
 
     GLfloat fov = 45.0;
+
     GLfloat aspect_ratio = 4.0/3.0;
 
     GLfloat nearClip = 0.1;
