@@ -43,6 +43,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
     int success;
     char infoLog[512];
    
+    spdlog::info("Compiling from Path: {};\tSource Length: {}", vertexPath, vertexCode.length() );
     // vertex Shader
     vertex = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertex, 1, &vShaderCode, NULL);
@@ -52,6 +53,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
     glGetShaderiv(vertex, GL_COMPILE_STATUS, &success);
     checkCompileErrors(vertex, "VERTEX");
 
+    spdlog::info("Compiling from Path: {};\tSource Length: {}", fragmentPath, fragmentCode.length() );
     // fragment Shader
     fragment = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragment, 1, &fShaderCode, NULL);
@@ -74,7 +76,7 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
     glDeleteShader(vertex);
     glDeleteShader(fragment);
 
-    spdlog::info("Shader linking successful for {} and {}", vertexPath, fragmentPath);
+    // spdlog::info("Shader linking successful for {} and {}", vertexPath, fragmentPath);
     spdlog::info("Shader program ID: {}", ID);
 }
 

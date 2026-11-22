@@ -115,7 +115,7 @@ void Camera::updateDelta()
     lastFrame = currentFrame;  
 }
 
-void Camera::updateUniform(Shader& shader)
+void Camera::updateUniform(Shader& shader) const
 {
     shader.setMat4("projection", projection);
     shader.setMat4("view", view);
@@ -125,6 +125,15 @@ void Camera::setCameraSpeed(GLfloat speed)
 {
     speedFactor = speed;
 }
+
+glm::vec3 Camera::getCameraPos() const
+{
+    return cameraPos;
+}
+
+// ************************************************************************************************
+//  Local Functions
+// ************************************************************************************************
 
 static glm::mat4 lookAt(const glm::vec3 &eye, const glm::vec3 &center, const glm::vec3 &up = glm::vec3(0.0,1.0,0.0))
 {

@@ -84,11 +84,13 @@ endif()
 #   Subsystems
 # ***************************************************************************************
 
-add_library(subsystem STATIC 
+add_library(subsystem STATIC
     src/modules/shader.cpp
     src/modules/camera.cpp
     src/modules/logger.cpp
 )
+# target_compile_definitions(subsystem PRIVATE SUBSYSTEM_SHARED)
+# set_target_properties(subsystem PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 target_include_directories(subsystem PRIVATE
     include
@@ -192,6 +194,8 @@ set(Exercise
     coordinate-ex3
     camera-ex1
     camera-ex2
+    lighting-ex1
+    lighting-ex2
 )
 
 # Add source files from the root src dir
@@ -215,6 +219,7 @@ set(Example
     camera-extended
     lighting
     lighting-extend
+    lighting-extended
 )
 
 # Add source files from the console folder

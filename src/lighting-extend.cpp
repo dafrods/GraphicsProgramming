@@ -1,3 +1,5 @@
+#include "glm/exponential.hpp"
+#include <cmath>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -119,7 +121,20 @@ if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 // ************************************************************************************************
 //  Vertex Handling
 // ************************************************************************************************
-    
+    // Equilateral Triangle Param
+    float upperOrigin = 2.0/3.0;
+    float lowerOrigin = 1.0/3.0;
+    float sideLength  = 2.0 * glm::sqrt(3.0) / 3;
+    float halfSideLength = sideLength / 2;
+
+    float tetrahedron[] = {
+        0.0, upperOrigin, 0.0,
+        halfSideLength, lowerOrigin, 0.0,
+        -halfSideLength, upperOrigin, 0.0,
+
+          
+    };
+
     float vertices[] = {
     -0.5f, -0.5f, -0.5f,  -1.0f,  -1.0f, -1.0f,
      0.5f, -0.5f, -0.5f,   1.0f,  -1.0f, -1.0f, 

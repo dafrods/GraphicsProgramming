@@ -1,3 +1,5 @@
+#include "glm/exponential.hpp"
+
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
@@ -22,12 +24,13 @@
 const GLuint SCR_WIDTH = 800;
 const GLuint SCR_HEIGHT = 600;
 
-const char* FILENAME = "lighting";
+const char* FILENAME = "lighting-extended";
 
 // ************************************************************************************************
 //  External Sources
 // ************************************************************************************************
 
+// Consider script for making shader files
 const std::string vShaderPath = std::format("assets/shaders/{}.vert", FILENAME);
 const std::string fShaderPath = std::format("assets/shaders/{}.frag", FILENAME);
 const std::string fLightShaderPath = std::format("assets/shaders/{}_Light.frag", FILENAME);
@@ -82,7 +85,7 @@ int main(int argc, char* argv[])
 //  Object Initialization
 // ************************************************************************************************
 
-Camera camera{FPSCAM};
+Camera camera{FREECAM};
 
 // ----------------------------------------------------
 //  glfw window contexts
@@ -118,66 +121,94 @@ if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 // ************************************************************************************************
 //  Vertex Handling
 // ************************************************************************************************
-    
-    float vertices[] = {
-        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-        0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
-        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+    // Equilateral Triangle Param
+    GLfloat upperOrigin = 2.0/3.0;
+    GLfloat lowerOrigin = -1.0/3.0;
+    GLfloat sideLength  = 2.0 * glm::sqrt(3.0) / 3;
+    GLfloat halfSideLength = sideLength / 2;
 
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-        0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-        0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-        0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+    GLfloat tet[] = {
 
-        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-        -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-        -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        // First Face: Front Face
+         0.0,                upperOrigin,    0.0,               // Apex
+         halfSideLength,     lowerOrigin,    halfSideLength,    // Front Right
+        -halfSideLength,     lowerOrigin,    halfSideLength,    // Front Left
 
-        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-        0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-        0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-        0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+        // Second Face: Right Face
+         0.0,                upperOrigin,    0.0,               // Apex
+         halfSideLength,     lowerOrigin,    halfSideLength,    // Front Right
+         0.0,                lowerOrigin,   -halfSideLength,    // Back
 
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-        0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
-        0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-        0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-        -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-        -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+        // Third Face: Left Face
+         0.0,                upperOrigin,    0.0,               // Apex
+        -halfSideLength,     lowerOrigin,    halfSideLength,    // Front Left
+         0.0,                lowerOrigin,   -halfSideLength,    // Back
 
-        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-        0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-        0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-        -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
-        -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+        // Fourth Face: Bottom/Foot
+         0.0,                lowerOrigin,   -halfSideLength,    // Back
+         halfSideLength,     lowerOrigin,    halfSideLength,    // Front Right
+        -halfSideLength,     lowerOrigin,    halfSideLength,    // Front Left
     };
+
+    GLfloat vertices[] = {
+    -0.5f, -0.5f, -0.5f,  -1.0f,  -1.0f, -1.0f,
+     0.5f, -0.5f, -0.5f,   1.0f,  -1.0f, -1.0f, 
+     0.5f,  0.5f, -0.5f,   1.0f,   1.0f, -1.0f, 
+     0.5f,  0.5f, -0.5f,   1.0f,   1.0f, -1.0f, 
+    -0.5f,  0.5f, -0.5f,  -1.0f,   1.0f, -1.0f, 
+    -0.5f, -0.5f, -0.5f,  -1.0f,  -1.0f, -1.0f, 
+
+    -0.5f, -0.5f,  0.5f,  -1.0f,  -1.0f, 1.0f,
+     0.5f, -0.5f,  0.5f,   1.0f,  -1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,   1.0f,   1.0f, 1.0f,
+     0.5f,  0.5f,  0.5f,   1.0f,   1.0f, 1.0f,
+    -0.5f,  0.5f,  0.5f,  -1.0f,   1.0f, 1.0f,
+    -0.5f, -0.5f,  0.5f,  -1.0f,  -1.0f, 1.0f,
+
+    -0.5f,  0.5f,  0.5f, -1.0f,   1.0f,   1.0f,
+    -0.5f,  0.5f, -0.5f, -1.0f,   1.0f,  -1.0f,
+    -0.5f, -0.5f, -0.5f, -1.0f,  -1.0f,  -1.0f,
+    -0.5f, -0.5f, -0.5f, -1.0f,  -1.0f,  -1.0f,
+    -0.5f, -0.5f,  0.5f, -1.0f,  -1.0f,   1.0f,
+    -0.5f,  0.5f,  0.5f, -1.0f,   1.0f,   1.0f,
+
+     0.5f,  0.5f,  0.5f,  1.0f,   1.0f,   1.0f,
+     0.5f,  0.5f, -0.5f,  1.0f,   1.0f,  -1.0f,
+     0.5f, -0.5f, -0.5f,  1.0f,  -1.0f,  -1.0f,
+     0.5f, -0.5f, -0.5f,  1.0f,  -1.0f,  -1.0f,
+     0.5f, -0.5f,  0.5f,  1.0f,  -1.0f,   1.0f,
+     0.5f,  0.5f,  0.5f,  1.0f,   1.0f,   1.0f,
+
+    -0.5f, -0.5f, -0.5f,  -1.0f, -1.0f,  -1.0f,
+     0.5f, -0.5f, -0.5f,   1.0f, -1.0f,  -1.0f,
+     0.5f, -0.5f,  0.5f,   1.0f, -1.0f,   1.0f,
+     0.5f, -0.5f,  0.5f,   1.0f, -1.0f,   1.0f,
+    -0.5f, -0.5f,  0.5f,  -1.0f, -1.0f,   1.0f,
+    -0.5f, -0.5f, -0.5f,  -1.0f, -1.0f,  -1.0f,
+
+    -0.5f,  0.5f, -0.5f,  -1.0f,  1.0f,  -1.0f,
+     0.5f,  0.5f, -0.5f,   1.0f,  1.0f,  -1.0f,
+     0.5f,  0.5f,  0.5f,   1.0f,  1.0f,   1.0f,
+     0.5f,  0.5f,  0.5f,   1.0f,  1.0f,   1.0f,
+    -0.5f,  0.5f,  0.5f,  -1.0f,  1.0f,   1.0f,
+    -0.5f,  0.5f, -0.5f,  -1.0f,  1.0f,  -1.0f
+};
 
     glm::vec3 cubePositions[] = {
     glm::vec3( 0.0f,  0.0f,  0.0f), 
-    // glm::vec3( 2.0f,  5.0f, -15.0f), 
-    // glm::vec3(-1.5f, -2.2f, -2.5f),  
-    // glm::vec3(-3.8f, -2.0f, -12.3f),  
-    // glm::vec3( 2.4f, -0.4f, -3.5f),  
-    // glm::vec3(-1.7f,  3.0f, -7.5f),  
-    // glm::vec3( 1.3f, -2.0f, -2.5f),  
-    // glm::vec3( 1.5f,  2.0f, -2.5f), 
-    // glm::vec3( 1.5f,  0.2f, -1.5f), 
-    // glm::vec3(-1.3f,  1.0f, -1.5f)  
+    glm::vec3( 2.0f,  5.0f, -15.0f), 
+    glm::vec3(-1.5f, -2.2f, -2.5f),  
+    glm::vec3(-3.8f, -2.0f, -12.3f),  
+    glm::vec3( 2.4f, -0.4f, -3.5f),  
+    glm::vec3(-1.7f,  3.0f, -7.5f),  
+    glm::vec3( 1.3f, -2.0f, -2.5f),  
+    glm::vec3( 1.5f,  2.0f, -2.5f), 
+    glm::vec3( 1.5f,  0.2f, -1.5f), 
+    glm::vec3(-1.3f,  1.0f, -1.5f)  
     };
 
     // Handlers
-    unsigned int VBO, VAO;
+    GLuint VBO, VAO;
 
     // Generate Handlers
     glGenVertexArrays(1, &VAO);
@@ -187,28 +218,27 @@ if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     glBindVertexArray(VAO);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(tet), tet, GL_STATIC_DRAW);
 
-    // Position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    // Vertex Pos
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    // Texture Coordinate attribute
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);  
-
+    // // Normal Pos
+    // glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    // glEnableVertexAttribArray(1);
 
     // ------------------------------------------
     //  Lighting
     // ------------------------------------------
 
-    unsigned int lightVAO;
+    GLuint lightVAO;
     glGenVertexArrays(1, &lightVAO);
     glBindVertexArray(lightVAO);
     // we only need to bind to the VBO, the container's VBO's data already contains the data.
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     // set the vertex attribute 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
 
@@ -230,11 +260,13 @@ if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     // shader.setInt("texture2", 1);
     
     // shader.use();
-
     
     camera.setCameraSpeed(0.01);
     glm::mat4 model = glm::mat4(1.0f);
     
+    GLfloat speed = 0.01;
+    GLfloat direction = -1;
+
     while (!glfwWindowShouldClose(window))
     {
         processInput(window, camera);
@@ -254,28 +286,29 @@ if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
         {
             model = glm::mat4(1.0f);
             model = glm::translate(model, cubePositions[i]);
-            // float angle = 20.0f * i; 
+            float angle = 20.0f * i; 
             
-            // if(i == 1 || (i % 3 == 0))
-            // {
-            //     model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
-            // }
-            // else 
-            // {
-            //     model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
-            // }
+            if(i == 1 || (i % 3 == 0))
+            {
+                model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
+            }
+            else 
+            {
+                model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+            }
             
             shader.setVec3("objectColor", 1.0f, 0.5f, 0.31f);
             shader.setVec3("lightColor",  1.0f, 1.0f, 1.0f);
             shader.setMat4("model", model);
+            shader.setVec3("lightPos", lightPos); 
+            shader.setVec3("viewPos", camera.getCameraPos()); 
             
             glBindVertexArray(VAO);
             glDrawArrays(GL_TRIANGLES, 0, 36);
         }
         camera.updateUniform(shader);
         
-
-
+        
         lightShader.use();
         glBindVertexArray(lightVAO);
         model = glm::mat4(1.0f);
@@ -285,6 +318,13 @@ if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     
         glDrawArrays(GL_TRIANGLES, 0, 36);
         camera.updateUniform(lightShader);
+
+        if (lightPos.x >= 5)
+            direction = -1;
+        else if(lightPos.x <= -5)
+            direction = 1;
+            
+        lightPos.x += speed * direction;
 
         glfwSwapBuffers(window);
         glfwPollEvents();

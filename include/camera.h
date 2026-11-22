@@ -6,6 +6,7 @@
 #include <GLFW/glfw3.h>
 #include <glm/gtc/matrix_transform.hpp>
 
+// CONSIDER ENUMS
 // CAMERA MOVEMENT MODE
 #define FREECAM 1
 #define FPSCAM 2
@@ -16,6 +17,8 @@ class Camera
     // ------------------------------------------
     // Camera Constants
     // ------------------------------------------
+
+    // * EMPTY * 
 
     // ------------------------------------------
     // Camera Settings    
@@ -81,8 +84,10 @@ class Camera
 
     void updateDelta();
 
-    void updateUniform(Shader& shader);
+    void updateUniform(Shader& shader) const;
 
     void setCameraSpeed(GLfloat);
+
+    glm::vec3 getCameraPos() const;
 
 };

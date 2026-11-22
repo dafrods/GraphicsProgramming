@@ -69,10 +69,10 @@ int main()
     // glad: load all OpenGL function pointers
     // ---------------------------------------
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-    {
-        spdlog::error("Failed to initialize GLAD");
-        return -1;
-    }
+{
+    spdlog::error("Failed to initialize GLAD");
+    return -1;
+}
 
 // ************************************************************************************************
 //  Shader compilation and linking
