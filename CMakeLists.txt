@@ -21,6 +21,7 @@ add_subdirectory(third-party/glm)
 add_subdirectory(third-party/spdlog)
 
 find_package(OpenGL REQUIRED)
+
 find_package(nlohmann_json 3.12.0 REQUIRED)
 
 # ************************************************************************
@@ -196,6 +197,7 @@ set(Exercise
     camera-ex2
     lighting-ex1
     lighting-ex2
+    lighting-ex3
 )
 
 # Add source files from the root src dir
@@ -220,6 +222,7 @@ set(Example
     lighting
     lighting-extend
     lighting-extended
+    material
 )
 
 # Add source files from the console folder
